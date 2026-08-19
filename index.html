@@ -3,15 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Navid Pourrabi — UX / Product Designer</title>
-<meta name="description" content="Portfolio of Navid Pourrabi, a UX / Product Designer crafting clear, human-centered digital products." />
+<title>Navid Pourrabi — UI/UX Designer &amp; Product Manager</title>
+<meta name="description" content="Navid Pourrabi — UI/UX designer and product manager. I design and ship e-commerce products, from add-ons and cross-sell to full merchant-facing apps." />
 
-<!-- TIP: Replace the meta title/description above with your own name + one-line positioning. -->
+<meta property="og:title" content="Navid Pourrabi — UI/UX Designer &amp; Product Manager" />
+<meta property="og:description" content="I design and ship e-commerce products — from add-ons and cross-sell to full merchant-facing apps." />
+<meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
+<script>(function(){try{var t=localStorage.getItem("theme");if(!t){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 </head>
 <body>
 
@@ -22,6 +25,7 @@
       <a href="index.html#work">Work</a>
       <a href="index.html#about">About</a>
       <a href="index.html#process">Process</a>
+      <a href="resume.html">Résumé</a>
       <a href="index.html#contact">Contact</a>
     </nav>
     <div class="nav-actions">
@@ -38,40 +42,52 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-kicker reveal">
+        <!-- Replace .hero-avatar with <img src="assets/images/portrait.jpg" alt="Navid Pourrabi" class="hero-avatar"> -->
         <div class="hero-avatar"></div>
-        <div class="hero-status"><span class="status-dot"></span> Open to new projects — Berlin, remote-friendly</div>
+        <div class="hero-status"><span class="status-dot"></span> Open to new roles &amp; projects — remote-friendly</div>
       </div>
 
-      <h1 class="reveal">Designing products that feel <em>obvious</em> in hindsight.</h1>
+      <h1 class="reveal">I design commerce products that <em>pay for themselves</em>.</h1>
+
+      <div class="role-line reveal">
+        <span class="role-chip">UI/UX Designer</span>
+        <span class="role-sep">+</span>
+        <span class="role-chip is-data">Product Manager</span>
+      </div>
 
       <p class="hero-sub reveal">
-        I'm Navid, a UX / product designer who turns messy problems into simple,
-        confident interfaces — from early research through to shipped, measurable outcomes.
+        I'm Navid. I sit between design and product: I run the research, draw the
+        interface, write the spec, and stay on it until the numbers move. Most
+        recently on <strong>Extendsell</strong>, where I shaped the add-ons and
+        frequently-bought-together experience for Shopify merchants.
       </p>
 
       <div class="hero-actions reveal">
         <a href="index.html#work" class="btn btn-primary">View selected work</a>
-        <a href="assets/resume-navid-pourrabi.pdf" class="btn btn-ghost">Download résumé</a>
+        <a href="resume.html" class="btn btn-ghost">Read résumé</a>
       </div>
 
-      <dl class="hero-meta reveal">
-        <div>
-          <dt>Experience</dt>
-          <dd>X years</dd>
+      <!-- FILL IN: replace the four numbers below with your real figures.
+           If you don't have a number yet, delete that .metric block entirely —
+           an honest three beats a padded four. -->
+      <div class="metric-band reveal">
+        <div class="metric">
+          <div class="metric-num">+[X]%</div>
+          <div class="metric-label">Average order value lift, Extendsell add-ons</div>
         </div>
-        <div>
-          <dt>Focus</dt>
-          <dd>Product &amp; UX</dd>
+        <div class="metric">
+          <div class="metric-num">[X]k</div>
+          <div class="metric-label">Merchants using features I shipped</div>
         </div>
-        <div>
-          <dt>Recent work</dt>
-          <dd>SaaS, mobile</dd>
+        <div class="metric">
+          <div class="metric-num">[X]</div>
+          <div class="metric-label">Products shipped end-to-end</div>
         </div>
-        <div>
-          <dt>Based in</dt>
-          <dd>Berlin</dd>
+        <div class="metric">
+          <div class="metric-num">[X] yrs</div>
+          <div class="metric-label">Designing &amp; managing digital products</div>
         </div>
-      </dl>
+      </div>
     </div>
   </section>
 
@@ -81,82 +97,88 @@
       <div class="section-head reveal">
         <div>
           <div class="eyebrow">Selected work</div>
-          <h2>A few projects I'm proud of.</h2>
+          <h2>Projects where I owned both the design and the outcome.</h2>
         </div>
-        <p class="hero-sub" style="margin-top:0;">Each case study walks through the problem, my process, and what shipped.</p>
+        <p class="hero-sub" style="margin-top:0;">Each case study covers the problem, the decisions I made, what shipped, and what it changed.</p>
       </div>
 
       <div class="work-grid">
 
-        <!-- Project 1 — Featured -->
-        <a class="work-card featured reveal" href="case-studies/case-study-template.html">
-          <div class="work-thumb" style="background:linear-gradient(135deg,#ffb199,#ff5a36);">
-            <span class="work-tag">Case study 01</span>
+        <!-- ===== Extendsell — featured ===== -->
+        <a class="work-card featured reveal" href="case-studies/extendsell.html">
+          <div class="work-thumb" style="background:linear-gradient(135deg,#f0d7c8,#c9502f);">
+            <span class="work-tag">Case study 01 — Extendsell</span>
           </div>
           <div class="work-body">
             <div class="work-title-row">
-              <h3>Project name — one-line outcome</h3>
+              <h3>Extendsell — turning add-ons and cross-sell into revenue merchants can see</h3>
               <span class="work-arrow">→</span>
             </div>
-            <p class="work-desc">Short summary of the problem you solved and the impact it had. Two sentences max.</p>
+            <p class="work-desc">
+              Shopify merchants were leaving money on the table because add-ons were buried and
+              recommendations felt random. I designed the add-on builder and the frequently-bought-together
+              engine, then owned the rollout as PM — from merchant interviews to launch metrics.
+            </p>
             <div class="work-meta-row">
-              <span class="pill">UX Research</span>
-              <span class="pill">Product Design</span>
+              <span class="pill pill-role">UI/UX + PM</span>
+              <span class="pill">E-commerce</span>
+              <span class="pill">Shopify</span>
               <span class="pill">2025</span>
+            </div>
+            <!-- FILL IN: real numbers -->
+            <div class="work-outcome">
+              <div>
+                <div class="o-num">+[X]%</div>
+                <div class="o-label">AOV</div>
+              </div>
+              <div>
+                <div class="o-num">+[X]%</div>
+                <div class="o-label">Attach rate</div>
+              </div>
+              <div>
+                <div class="o-num">[X]k</div>
+                <div class="o-label">Merchants</div>
+              </div>
             </div>
           </div>
         </a>
 
-        <!-- Project 2 -->
+        <!-- ===== Project slot 2 — DUPLICATE THIS BLOCK PER PROJECT =====
+             1. Copy case-studies/extendsell.html → case-studies/your-project.html
+             2. Update the href below and the copy in this card -->
         <a class="work-card reveal" href="case-studies/case-study-template.html">
-          <div class="work-thumb" style="background:linear-gradient(135deg,#c9c6ff,#5a4bff);">
+          <div class="work-thumb" style="background:linear-gradient(135deg,#cfe0ef,#2f5d8a);">
             <span class="work-tag">Case study 02</span>
           </div>
           <div class="work-body">
             <div class="work-title-row">
-              <h3>Project name</h3>
+              <h3>Project name — the outcome in one line</h3>
               <span class="work-arrow">→</span>
             </div>
-            <p class="work-desc">One or two sentences describing the project and the result.</p>
+            <p class="work-desc">Two sentences: what was broken, and what changed after you shipped.</p>
             <div class="work-meta-row">
-              <span class="pill">Mobile</span>
+              <span class="pill pill-role">UI/UX + PM</span>
+              <span class="pill">Web app</span>
               <span class="pill">2024</span>
             </div>
           </div>
         </a>
 
-        <!-- Project 3 -->
+        <!-- ===== Project slot 3 ===== -->
         <a class="work-card reveal" href="case-studies/case-study-template.html">
-          <div class="work-thumb" style="background:linear-gradient(135deg,#a6f0c6,#12a150);">
+          <div class="work-thumb" style="background:linear-gradient(135deg,#dfe8d5,#5d7a4a);">
             <span class="work-tag">Case study 03</span>
           </div>
           <div class="work-body">
             <div class="work-title-row">
-              <h3>Project name</h3>
+              <h3>Project name — the outcome in one line</h3>
               <span class="work-arrow">→</span>
             </div>
-            <p class="work-desc">One or two sentences describing the project and the result.</p>
+            <p class="work-desc">Two sentences: what was broken, and what changed after you shipped.</p>
             <div class="work-meta-row">
-              <span class="pill">Design System</span>
+              <span class="pill pill-role">UI/UX</span>
+              <span class="pill">Mobile</span>
               <span class="pill">2024</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Project 4 -->
-        <a class="work-card reveal" href="case-studies/case-study-template.html">
-          <div class="work-thumb" style="background:linear-gradient(135deg,#ffe08a,#ff9d2f);">
-            <span class="work-tag">Case study 04</span>
-          </div>
-          <div class="work-body">
-            <div class="work-title-row">
-              <h3>Project name</h3>
-              <span class="work-arrow">→</span>
-            </div>
-            <p class="work-desc">One or two sentences describing the project and the result.</p>
-            <div class="work-meta-row">
-              <span class="pill">Web App</span>
-              <span class="pill">2023</span>
             </div>
           </div>
         </a>
@@ -174,16 +196,27 @@
         </div>
         <div class="reveal">
           <div class="eyebrow">About</div>
-          <p class="about-lede">I care about the gap between what a product could be and what it feels like to actually use.</p>
+          <p class="about-lede">I don't hand off a screen and walk away. I stay until the thing works in the market.</p>
           <div class="about-body">
             <p>
-              Write 2–3 short paragraphs here: how you got into UX/product design, the kinds of
-              problems you like solving, and how you work with teams (research, prototyping,
-              collaboration with engineering, etc).
+              I work as a UI/UX designer and a product manager, and I think the split between
+              those two jobs is mostly artificial. The research that tells you what to build is
+              the same research that tells you how it should feel. So I do both: I talk to users,
+              frame the problem, design the interface, write the requirements, and sit with
+              engineering through the build.
             </p>
             <p>
-              Mention a philosophy or principle that guides your work — something specific to you,
-              not a generic design cliché.
+              Most of my recent work is in e-commerce — merchant-facing tools where every design
+              decision has a number attached to it. On <strong>Extendsell</strong> I designed the
+              add-ons and frequently-bought-together experience, which meant balancing two very
+              different users: the merchant configuring offers in the admin, and the shopper who
+              should never feel sold to.
+            </p>
+            <p>
+              <!-- FILL IN: 2–3 sentences of your own — how you got here, what you believe about
+                   product design, what you're looking for next. Make it specific to you. -->
+              My rule of thumb: if I can't explain why a screen exists in one sentence, it
+              shouldn't ship yet.
             </p>
           </div>
 
@@ -191,47 +224,58 @@
             <div class="skills-group">
               <h4>Design</h4>
               <ul>
-                <li>User research</li>
-                <li>Wireframing</li>
-                <li>Prototyping</li>
+                <li>User research &amp; interviews</li>
+                <li>Information architecture</li>
+                <li>Wireframing &amp; prototyping</li>
                 <li>Design systems</li>
-                <li>Interaction design</li>
+                <li>Usability testing</li>
+              </ul>
+            </div>
+            <div class="skills-group">
+              <h4>Product</h4>
+              <ul>
+                <li>Roadmapping &amp; prioritisation</li>
+                <li>PRDs &amp; user stories</li>
+                <li>A/B testing &amp; analytics</li>
+                <li>Stakeholder alignment</li>
+                <li>Go-to-market &amp; launch</li>
               </ul>
             </div>
             <div class="skills-group">
               <h4>Tools</h4>
               <ul>
-                <li>Figma</li>
-                <li>FigJam</li>
+                <li>Figma &amp; FigJam</li>
+                <li>Jira / Linear</li>
                 <li>Notion</li>
-                <li>Maze</li>
-                <li>Webflow</li>
+                <li>Shopify admin &amp; Polaris</li>
+                <li>GA4 / Mixpanel</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- FILL IN: your real roles and dates. Keep the most recent first. -->
       <div class="timeline reveal">
         <div class="timeline-item">
-          <time>2024 — Now</time>
+          <time>[2024] — Now</time>
           <div>
-            <h4>Job title, Company name</h4>
-            <p>One line describing your scope and a notable win.</p>
+            <h4>UI/UX Designer &amp; Product Manager, Extendsell</h4>
+            <p>Own design and product for the add-ons and frequently-bought-together suite used by Shopify merchants.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <time>2022 — 2024</time>
+          <time>[2022 — 2024]</time>
           <div>
-            <h4>Job title, Company name</h4>
-            <p>One line describing your scope and a notable win.</p>
+            <h4>[Job title], [Company name]</h4>
+            <p>One line on your scope and a notable win.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <time>2020 — 2022</time>
+          <time>[2020 — 2022]</time>
           <div>
-            <h4>Job title, Company name</h4>
-            <p>One line describing your scope and a notable win.</p>
+            <h4>[Job title], [Company name]</h4>
+            <p>One line on your scope and a notable win.</p>
           </div>
         </div>
       </div>
@@ -244,30 +288,30 @@
       <div class="section-head reveal">
         <div>
           <div class="eyebrow">How I work</div>
-          <h2>A process built for clarity, not ceremony.</h2>
+          <h2>Designer's craft, product manager's discipline.</h2>
         </div>
       </div>
 
       <div class="process-strip">
         <div class="process-step reveal">
           <div class="step-num">01</div>
-          <h4>Discover</h4>
-          <p>Interviews, data, and stakeholder input to frame the real problem.</p>
+          <h4>Frame</h4>
+          <p>Interviews, support tickets, and funnel data until the real problem is named — not the requested feature.</p>
         </div>
         <div class="process-step reveal">
           <div class="step-num">02</div>
-          <h4>Define</h4>
-          <p>Turn findings into clear problem statements and success metrics.</p>
+          <h4>Decide</h4>
+          <p>Turn findings into a prioritised bet with a success metric attached before a single screen is drawn.</p>
         </div>
         <div class="process-step reveal">
           <div class="step-num">03</div>
           <h4>Design</h4>
-          <p>Flows, wireframes, and high-fidelity prototypes, tested early and often.</p>
+          <p>Flows, wireframes, and prototypes tested with real users, built on a system engineering can reuse.</p>
         </div>
         <div class="process-step reveal">
           <div class="step-num">04</div>
-          <h4>Deliver</h4>
-          <p>Ship with engineering, then measure and iterate against real usage.</p>
+          <h4>Ship &amp; measure</h4>
+          <p>Launch with engineering, watch the metric, and iterate — or roll it back and say why.</p>
         </div>
       </div>
     </div>
@@ -278,17 +322,18 @@
     <div class="wrap">
       <div class="cta-block reveal">
         <div class="eyebrow" style="justify-content:center;">Get in touch</div>
-        <h2>Have a project in mind? Let's make it obvious.</h2>
-        <p class="hero-sub">I'm currently open to freelance and full-time UX / product design roles.</p>
+        <h2>Got a product that should be earning more?</h2>
+        <p class="hero-sub">Open to full-time UI/UX design and product management roles, and to selected freelance work.</p>
         <div class="cta-actions">
-          <a href="mailto:you@example.com" class="btn btn-primary">Email me</a>
-          <a href="https://www.linkedin.com/in/your-handle" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:navid.pourrabi@gmail.com" class="btn btn-primary">Email me</a>
+          <a href="resume.html" class="btn btn-ghost">Résumé</a>
         </div>
+        <!-- FILL IN: swap in your real LinkedIn / Behance / Dribbble handles, or delete the ones you don't use. -->
         <div class="contact-list">
-          <a href="mailto:you@example.com">you@example.com</a>
+          <a href="mailto:navid.pourrabi@gmail.com">navid.pourrabi@gmail.com</a>
           <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://www.behance.net/your-handle" target="_blank" rel="noopener">Behance</a>
-          <a href="https://dribbble.com/your-handle" target="_blank" rel="noopener">Dribbble</a>
+          <a href="https://github.com/NavidPourrabi" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>
@@ -298,9 +343,10 @@
 
 <footer class="site-footer">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;width:100%;">
-    <span>© <span data-year></span> Navid Pourrabi. Built with care.</span>
+    <span>© <span data-year></span> Navid Pourrabi — UI/UX Designer &amp; Product Manager.</span>
     <div class="footer-links">
-      <a href="mailto:you@example.com">Email</a>
+      <a href="mailto:navid.pourrabi@gmail.com">Email</a>
+      <a href="resume.html">Résumé</a>
       <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/NavidPourrabi" target="_blank" rel="noopener">GitHub</a>
     </div>

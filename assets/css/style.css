@@ -3,22 +3,28 @@
    ========================================================================== */
 :root {
   /* Color */
-  --color-bg: #fafaf8;
+  --color-bg: #faf8f4;
   --color-surface: #ffffff;
-  --color-ink: #14140f;
-  --color-ink-soft: #4a4a42;
-  --color-ink-faint: #8a8a7e;
-  --color-border: #e5e4dd;
-  --color-accent: #ff5a36;
+  --color-ink: #16150f;
+  --color-ink-soft: #4c4a40;
+  --color-ink-faint: #8a877b;
+  --color-border: #e5e2d8;
+  --color-accent: #c9502f;
   --color-accent-ink: #14140f;
 
+  /* Data accent — metrics, outcome numbers, charts */
+  --color-data: #2f5d8a;
+  --color-data-soft: #e6eef6;
+
   /* Dark mode */
-  --color-bg-dark: #0e0e0c;
-  --color-surface-dark: #171713;
-  --color-ink-dark: #f5f5f0;
-  --color-ink-soft-dark: #c2c2b8;
-  --color-ink-faint-dark: #7a7a70;
-  --color-border-dark: #2a2a24;
+  --color-bg-dark: #100f0c;
+  --color-surface-dark: #191814;
+  --color-ink-dark: #f5f3ed;
+  --color-ink-soft-dark: #c2bfb2;
+  --color-ink-faint-dark: #7d7a6f;
+  --color-border-dark: #2b2a23;
+  --color-data-dark: #7fb0dd;
+  --color-data-soft-dark: #1a2733;
 
   /* Type */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -51,6 +57,9 @@
   --color-ink-soft: var(--color-ink-soft-dark);
   --color-ink-faint: var(--color-ink-faint-dark);
   --color-border: var(--color-border-dark);
+  --color-accent: #e8714e;
+  --color-data: var(--color-data-dark);
+  --color-data-soft: var(--color-data-soft-dark);
 }
 
 /* ==========================================================================
@@ -991,4 +1000,229 @@ body.nav-open .site-header {
 .reveal.reveal-init.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ==========================================================================
+   Role line — dual title (design + product)
+   ========================================================================== */
+.role-line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+}
+
+.role-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.35em 0.85em;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.role-chip.is-data {
+  border-color: color-mix(in srgb, var(--color-data) 35%, transparent);
+  background: var(--color-data-soft);
+  color: var(--color-data);
+}
+
+.role-sep {
+  color: var(--color-ink-faint);
+}
+
+/* ==========================================================================
+   Metric band — outcome numbers (product-manager proof)
+   ========================================================================== */
+.metric-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: var(--space-2xl);
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.metric {
+  background: var(--color-surface);
+  padding: var(--space-md) var(--space-sm);
+}
+
+.metric .metric-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.05;
+  color: var(--color-data);
+  letter-spacing: -0.01em;
+}
+
+.metric .metric-label {
+  margin-top: var(--space-3xs);
+  font-size: 0.8rem;
+  color: var(--color-ink-faint);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Work card — outcome row (B-direction proof on every card)
+   ========================================================================== */
+.work-outcome {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.work-outcome div {
+  min-width: 0;
+}
+
+.work-outcome .o-num {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-data);
+  line-height: 1.2;
+}
+
+.work-outcome .o-label {
+  font-size: 0.72rem;
+  color: var(--color-ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pill.pill-role {
+  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Résumé page
+   ========================================================================== */
+.resume-head {
+  padding-block: var(--space-2xl) var(--space-lg);
+}
+
+.resume-head h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.resume-actions {
+  margin-top: var(--space-lg);
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-lg);
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.resume-grid + .resume-grid {
+  border-top: 1px solid var(--color-border);
+}
+
+.resume-grid > h2 {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-faint);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.resume-role {
+  padding-bottom: var(--space-md);
+}
+
+.resume-role + .resume-role {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-md);
+}
+
+.resume-role .r-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.resume-role h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.resume-role .r-when {
+  font-size: 0.85rem;
+  color: var(--color-ink-faint);
+  white-space: nowrap;
+}
+
+.resume-role .r-org {
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+}
+
+.resume-role ul {
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resume-role li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: var(--space-2xs);
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+}
+
+.resume-role li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+@media (max-width: 720px) {
+  .metric-band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .work-outcome {
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-md);
+  }
 }

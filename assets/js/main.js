@@ -1,13 +1,33 @@
 // ==========================================================================
-// Theme toggle (light / dark) — persisted in memory only for this session,
-// respects the visitor's OS preference on first load.
+// Theme toggle (light / dark) — respects the visitor's OS preference on first
+// load, then remembers their explicit choice across pages and visits.
+// The inline script in each page's <head> applies the stored theme before
+// first paint; this block keeps the toggle buttons in sync.
 // ==========================================================================
 (function initTheme() {
   const root = document.documentElement;
   const toggleButtons = document.querySelectorAll('[data-theme-toggle]');
 
+  function readStored() {
+    try {
+      return localStorage.getItem('theme');
+    } catch (err) {
+      // Private mode / blocked storage — fall back to session-only behaviour.
+      return null;
+    }
+  }
+
+  function store(value) {
+    try {
+      localStorage.setItem('theme', value);
+    } catch (err) {
+      /* non-fatal */
+    }
+  }
+
+  const stored = readStored();
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  let theme = prefersDark ? 'dark' : 'light';
+  let theme = stored || (prefersDark ? 'dark' : 'light');
   root.setAttribute('data-theme', theme);
   updateToggleIcons(theme);
 
@@ -15,6 +35,7 @@
     btn.addEventListener('click', () => {
       theme = theme === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', theme);
+      store(theme);
       updateToggleIcons(theme);
     });
   });

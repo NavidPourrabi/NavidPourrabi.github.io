@@ -1,64 +1,76 @@
-# Portfolio Website
+# Portfolio Website — Navid Pourrabi
 
-A clean, modern, static UX/product design portfolio — no build tools, no framework, just HTML/CSS/JS. Open `index.html` in a browser and it works.
+Static UX/product portfolio. No build tools, no framework — HTML, CSS, and a little JS.
+Open `index.html` in a browser and it works.
 
 ## Structure
 
 ```
-index.html                          → home page (hero, work grid, about, process, contact)
+index.html                          → home (hero + metrics, work grid, about, process, contact)
+resume.html                         → full résumé page + PDF download button
 case-studies/
-  case-study-template.html          → duplicate this for each project
+  extendsell.html                   → Extendsell case study (add-ons + frequently bought together)
+  case-study-template.html          → duplicate this for each new project
 assets/
-  css/style.css                     → design system + all styles
+  css/style.css                     → design tokens + all styles
   js/main.js                        → dark mode toggle, mobile nav, scroll reveal
-  images/                           → put your photos/screenshots here
+  images/                           → your photos and screenshots go here
+  resume-navid-pourrabi.pdf         → drop your PDF here (resume.html already links to it)
 ```
 
-## Fill in your content
+## Before you publish — fill in the placeholders
 
-Search each HTML file for these and replace them with your own:
+Search all HTML files for `[` — every `[SQUARE BRACKET]` is a placeholder that must be
+replaced with a real value. Do not publish with brackets visible. The main ones:
 
-- **Name & title** — `<title>` tags and the logo in the header (`Navid<span>.</span>`)
-- **Hero copy** — headline, subhead, and the `hero-meta` stats in `index.html`
-- **Work grid** — 4 sample project cards in `index.html`. Each links to `case-studies/case-study-template.html`; duplicate that file per project (e.g. `case-study-01.html`) and update the `href`
-- **Case study content** — every section in the template (`Problem`, `Research`, `Exploring the solution`, `Final design`, `Outcome`, `Reflection`) has placeholder copy in plain English describing what to write
-- **Images** — `.img-placeholder` divs and the gradient `.work-thumb` blocks are stand-ins. Replace with `<img src="assets/images/your-file.jpg" alt="...">` once you have real screenshots/photos
-- **Contact links** — `mailto:you@example.com`, LinkedIn/Behance/Dribbble URLs appear in the `#contact` section and the footer
-- **Résumé** — add a PDF at `assets/resume-navid-pourrabi.pdf` (the download button in the hero already links there)
+| Where | What to replace |
+| --- | --- |
+| `index.html` hero | The four numbers in `.metric-band`. Delete any metric you can't back up. |
+| `index.html` work grid | Project slots 2 and 3 — real projects, or delete the cards |
+| `index.html` about + timeline | Your own paragraphs, job titles, and dates |
+| `case-studies/extendsell.html` | Every `[X]`, plus a real merchant quote and the outcome stats |
+| `resume.html` | Roles, dates, education, languages |
+| All pages | LinkedIn / Behance handles (currently `your-handle`) |
+| `assets/images/` | Portrait, project covers, and the `.img-placeholder` blocks |
+
+**On the numbers:** three real metrics beat six invented ones. If a figure was never
+measured, delete the block rather than guessing — the layout handles fewer items.
+
+## Design system
+
+Everything lives in `:root` at the top of `assets/css/style.css`:
+
+- `--color-accent` (warm persimmon) — headings, links, emphasis
+- `--color-data` (slate blue) — metrics and outcome numbers only
+- `--font-display` Fraunces (serif headlines), `--font-body` Inter
+- Dark mode overrides sit in the `[data-theme='dark']` block right below
+
+Change a token there and the whole site follows.
+
+## Adding a project
+
+1. `cp case-studies/extendsell.html case-studies/your-project.html`
+2. Replace the content
+3. In `index.html`, point the matching `.work-card` `href` at the new file
 
 ## Preview locally
 
-Just open `index.html` in your browser, or run a tiny local server so relative paths and fonts behave exactly like production:
-
 ```bash
-# Python
-python3 -m http.server 8000
-
-# Node
-npx serve .
+python -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Then open `http://localhost:8000`.
 
-## Push to GitHub
+## Deploy with GitHub Pages
 
-```bash
-git add .
-git commit -m "Add initial portfolio site"
-git push origin main
-```
+1. Repo → **Settings → Pages**
+2. **Source** → `Deploy from a branch`
+3. Branch `main`, folder `/ (root)` → **Save**
 
-(If your default branch is `master` instead of `main`, use that instead.)
-
-## Deploy for free with GitHub Pages
-
-1. On GitHub, go to your repo → **Settings → Pages**
-2. Under **Build and deployment**, set **Source** to `Deploy from a branch`
-3. Pick the `main` branch and `/ (root)` folder, then **Save**
-4. GitHub will publish the site at `https://<your-username>.github.io/Portfolio-Website/` within a minute or two
+Published at `https://navidpourrabi.github.io/Portfolio-Website/` within a minute or two.
 
 ## Notes
 
-- Fonts (Fraunces + Inter) load from Google Fonts via `<link>` tags in each page's `<head>` — no local install needed
-- Dark mode toggle is in the top-right nav; it respects the visitor's OS preference on first load
-- The design system (colors, spacing, type scale) lives entirely in `assets/css/style.css` under `:root` — change the tokens there to restyle the whole site at once
+- Fonts load from Google Fonts via `<link>` — no local install
+- Dark mode respects the visitor's OS setting on first load, then remembers their choice
+- Content is fully visible with JS disabled; the scroll animation is progressive enhancement
