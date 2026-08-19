@@ -3,17 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Extendsell — Add-ons &amp; Frequently Bought Together — Navid Pourrabi</title>
-<meta name="description" content="Case study: designing the add-ons and frequently-bought-together experience at Extendsell, for Shopify merchants and their shoppers." />
-
-<!--
-  TO FINISH THIS PAGE
-  -------------------
-  1. Export the Extendsell screens from Figma as PNGs into assets/images/
-  2. Replace each .img-placeholder div with <img src="../assets/images/your-file.png" alt="...">
-  3. Add real outcome numbers in the "What it changed" section — or delete that
-     section entirely rather than publishing a number you can't back up.
--->
+<title>Extendsell — Add-ons, FBT &amp; Related Products — Navid Pourrabi</title>
+<meta name="description" content="Case study: designing the add-ons, frequently-bought-together, and related-products experiences at Extendsell — for Shopify merchants and their shoppers." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,12 +40,12 @@
       <a href="../index.html#work" class="cs-back reveal">← Back to work</a>
 
       <div class="eyebrow reveal">UI/UX Design · Product · E-commerce</div>
-      <h1 class="reveal">Extendsell — making add-ons feel like help, not a hard sell.</h1>
+      <h1 class="reveal">Extendsell — three ways to sell more without making the shopper feel sold to.</h1>
       <p class="hero-sub reveal">
-        Extendsell gives Shopify merchants a way to sell add-ons, warranties, and bundles
-        alongside their main products. I work on both sides of it: the merchant building
-        an offer in the admin, and the shopper deciding whether to accept one — including
-        the frequently-bought-together experience.
+        Extendsell is a Shopify app for merchants who want to sell more per order.
+        I designed three storefront widgets — add-ons, frequently bought together, and
+        related products — plus the merchant admin where each offer gets built. Every
+        surface ships in light and dark, across desktop, tablet, and phone.
       </p>
 
       <dl class="cs-meta-grid reveal">
@@ -63,8 +54,8 @@
           <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">UI/UX Designer</dd>
         </div>
         <div>
-          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Focus</dt>
-          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">Add-ons &amp; FBT</dd>
+          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Surfaces</dt>
+          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">3 widgets + admin</dd>
         </div>
         <div>
           <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Status</dt>
@@ -79,9 +70,9 @@
   </section>
 
   <div class="wrap">
-    <div class="cs-cover reveal">
-      <div class="img-placeholder" style="height:100%;">Cover — the add-on builder and the storefront widget side by side (export from Figma, 16:8)</div>
-    </div>
+    <figure class="shot cs-cover reveal" style="height:auto;background:none;">
+      <img src="../assets/images/extendsell-fbt-desktop.png" alt="The frequently bought together widget on a product page: three products with tick boxes and variant selectors, a total showing a 10 percent discount, and an add bundle to cart button." />
+    </figure>
   </div>
 
   <div class="cs-body">
@@ -92,15 +83,18 @@
         <h2>Context</h2>
         <p>
           A store makes much of its margin on what a shopper adds <em>after</em> deciding on
-          the main product — the case with the phone, the warranty with the appliance, the
-          second filter with the coffee machine. Extendsell exists to make those attachments
-          easy for a merchant to set up and easy for a shopper to accept.
+          the main product — the bulb with the lamp, the hat with the dress. Extendsell
+          gives Shopify merchants three ways to make that happen, and my job was to make
+          all three feel like one product.
         </p>
+        <ul>
+          <li><strong>Add-ons —</strong> optional extras, each accepted individually.</li>
+          <li><strong>Frequently bought together —</strong> a discounted bundle, taken as one decision.</li>
+          <li><strong>Related products —</strong> discovery, for when nothing is being bundled at all.</li>
+        </ul>
         <p>
-          Two features sit inside that promise, and I work on both:
-          <strong>add-ons</strong>, where a merchant attaches optional extras to a specific
-          product, and <strong>frequently bought together</strong>, where the store suggests
-          a bundle based on what shoppers actually buy in the same order.
+          They look similar at a glance, which was the first real problem. If a shopper
+          can't tell what a widget is asking of them, they skip it.
         </p>
       </section>
 
@@ -109,62 +103,129 @@
         <h2>One product, two users who want opposite things</h2>
         <p>
           The merchant wants the offer visible, frequent, and hard to miss. The shopper wants
-          to not be sold to. Almost every decision on this project is a negotiation between
-          those two, so I made the tension the review criterion rather than something to
-          resolve once: a design ships only if it survives both readings.
+          to not be sold to. Rather than resolve that once, I made it the standing review
+          criterion — a screen ships only if it survives both readings.
         </p>
-        <ul>
-          <li><strong>Merchant view —</strong> can they build a sensible offer quickly, without support?</li>
-          <li><strong>Shopper view —</strong> does the suggestion read as a helpful default, or as an upsell popup?</li>
-        </ul>
+        <p>
+          That principle is why the storefront widgets never auto-add anything to a cart,
+          why every discount shows its arithmetic, and why the admin actively warns a merchant
+          away from the more aggressive settings it offers them.
+        </p>
       </section>
 
       <!-- ============ ADD-ONS ============ -->
       <section class="section reveal">
-        <h2>The add-on builder</h2>
+        <h2>Add-ons — one at a time, on purpose</h2>
         <p>
-          The merchant side is a configuration problem disguised as a design problem. An empty
-          form asks the merchant to already know what a good offer looks like — most don't.
-          So the builder leads with a starting point and a live preview, and keeps the rules
-          in plain language instead of platform syntax.
+          The add-on widget had to read as a shelf, not a bundle. The heading says what it is
+          and the subhead sets the rule out loud: <em>each one is added on its own — pick only
+          what you want</em>. Every card carries its own price, its own variant selector, and
+          its own button, which flips to a clear "Added" state rather than silently changing
+          a count somewhere else.
         </p>
         <ul>
-          <li>Live storefront preview beside the form, so nothing gets published blind.</li>
-          <li>Offer rules written as sentences a merchant can read back to themselves.</li>
-          <li>Built to sit inside the Shopify admin, so it feels native rather than bolted on.</li>
+          <li>Running total in the buy-box column, with the saving stated in currency, not just a percentage.</li>
+          <li>Button text counts what's actually selected — "Add 1 item to cart" — so nothing is ambiguous at the moment of commitment.</li>
+          <li>A line of microcopy explains where the add-ons end up, because a shopper who is surprised at checkout doesn't come back.</li>
+          <li>Horizontal carousel on wide screens, stacking on narrow ones, so a long list never buries the buy button.</li>
         </ul>
-        <div class="cs-image-row">
-          <div class="img-placeholder">Add-on builder — setup view (Figma export)</div>
-          <div class="img-placeholder">Add-on builder — live preview state (Figma export)</div>
+        <div class="shot-row">
+          <figure class="shot">
+            <img src="../assets/images/extendsell-addon-desktop.png" alt="Add-on widget in light mode: a row of product cards each with its own price, variant dropdown and add button, beside a running add-ons total." />
+            <figcaption>Add-on widget, desktop — light.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="../assets/images/extendsell-addon-dark.png" alt="The same add-on widget rendered in dark mode." />
+            <figcaption>The same widget in dark. Every surface was designed in both from the start, not retrofitted.</figcaption>
+          </figure>
         </div>
       </section>
 
       <!-- ============ FBT ============ -->
       <section class="section reveal">
-        <h2>Frequently bought together</h2>
+        <h2>Frequently bought together — one decision, made of parts</h2>
         <p>
-          FBT has a credibility problem: a shopper ignores a recommendation they don't believe.
-          So the design leads with the reason. The bundle says plainly what it is, shows the
-          combined price against the separate one, and lets a shopper drop a single item
-          without losing the rest of the offer.
+          FBT has a credibility problem: a shopper ignores a recommendation they don't believe,
+          and resents one they can't refuse in part. So the bundle is a single decision built
+          from individually removable pieces. Untick the belt and the total recalculates; the
+          rest of the offer survives.
         </p>
         <ul>
-          <li>The bundle is one decision made of individually removable parts — not all-or-nothing.</li>
-          <li>Savings shown in absolute and percentage terms, since different shoppers read different framings.</li>
-          <li>Placed where purchase intent is highest, rather than at the bottom of the page.</li>
-          <li>Inherits the store's own type and colour, so it reads as part of the shop.</li>
+          <li>Each item keeps its own variant selector — bundles fail when the shopper can't pick their own size.</li>
+          <li>The discount badge sits next to the struck-through original, so the saving is visible without arithmetic.</li>
+          <li>Placed directly under the buy button, where intent is highest, rather than at the bottom of the page.</li>
+          <li>Fonts and colours inherit from the merchant's theme, so it reads as part of the shop instead of a bolted-on app.</li>
         </ul>
-        <div class="cs-image-row">
-          <div class="img-placeholder">FBT widget — default state (Figma export)</div>
-          <div class="img-placeholder">FBT widget — item removed, price updating (Figma export)</div>
+        <div class="shot-row">
+          <figure class="shot">
+            <img src="../assets/images/extendsell-fbt-dark.png" alt="Frequently bought together widget in dark mode, showing selectable products and a discounted bundle total." />
+            <figcaption>FBT in dark mode.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="../assets/images/extendsell-fbt-phone.png" alt="Frequently bought together widget on a 390 pixel wide phone screen, with products stacked vertically." />
+            <figcaption>Phone at 390px — the layout switches from horizontal to vertical automatically.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ RELATED ============ -->
+      <section class="section reveal">
+        <h2>Related products — discovery without a detour</h2>
+        <p>
+          Related products isn't selling a bundle, it's answering "is there something better
+          for me here?". It's paged rather than infinitely scrolling, so the shopper can see
+          how much there is to look at, and a quick-view modal lets them check a size and add
+          to cart without ever leaving the page they were about to buy from.
+        </p>
+        <div class="shot-single">
+          <figure class="shot">
+            <img src="../assets/images/extendsell-related.png" alt="Related products carousel showing five product cards with a page indicator reading page 1 of 4 and a progress bar." />
+            <figcaption>Paged carousel with an explicit "page 1 of 4" — the shopper always knows the size of the set.</figcaption>
+          </figure>
+        </div>
+        <div class="shot-single">
+          <figure class="shot">
+            <img src="../assets/images/extendsell-quickview.png" alt="Quick view modal showing a dress with an image gallery, thumbnails, a variant dropdown and an add to cart button." />
+            <figcaption>Quick view — gallery, variant, add to cart, then straight back to where they were.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============ ADMIN ============ -->
+      <section class="section reveal">
+        <h2>The merchant side — where the real design problem was</h2>
+        <p>
+          The storefront widgets are the visible half. The harder half is the admin, because a
+          merchant configuring an offer is making pricing decisions in a form and can't see
+          the consequences. So the whole page is built around removing that blindness.
+        </p>
+        <ul>
+          <li><strong>Four named steps</strong> — Products, Bundle, Offer, Appearance — so a long form reads as a sequence rather than a wall.</li>
+          <li><strong>A live preview that updates as you edit</strong>, with a desktop/mobile toggle, so nothing is ever published blind.</li>
+          <li><strong>An explicit pre-flight checklist</strong> in the status panel: what's done, what's still missing before the offer can go live.</li>
+          <li><strong>The bundle maths shown in full</strong> — subtotal, discount, what the customer pays, what the customer saves — instead of one final number.</li>
+          <li><strong>Helper text under every control</strong> in plain language: what it does, and what happens to existing orders if you change it.</li>
+        </ul>
+        <p>
+          The part I'm most attached to is the guardrails. The admin lets a merchant pre-select
+          recommended products and hide the checkboxes — and then tells them not to: turning
+          checkboxes off forces an all-or-nothing bundle and removes the customer's choice.
+          Designing a setting alongside an honest argument against overusing it was the
+          clearest expression of the two-users principle in the whole project.
+        </p>
+        <div class="shot-single">
+          <figure class="shot shot-tall">
+            <img src="../assets/images/extendsell-create-offer.png" alt="The Extendsell create-offer admin page, showing the products step, bundle pricing breakdown, and a live storefront preview panel on the right." />
+            <figcaption>Create offer — the four-step admin with a live preview panel and a pre-activation checklist. Cropped; the full page continues into appearance and placement settings.</figcaption>
+          </figure>
         </div>
       </section>
 
       <!-- ============ NEXT ============ -->
       <section class="cs-next reveal">
         <div class="eyebrow" style="justify-content:center;">Next</div>
-        <h2 style="margin-bottom:1.5rem;">Want the full walkthrough?</h2>
-        <p class="hero-sub" style="margin-inline:auto;">Happy to walk through the Figma files and the decisions behind them.</p>
+        <h2 style="margin-bottom:1rem;">Want the full walkthrough?</h2>
+        <p class="hero-sub" style="margin-inline:auto;">Happy to walk through the Figma files, the states and edge cases, and the decisions behind them.</p>
         <div class="cta-actions" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
           <a href="mailto:navid.pourrabi@gmail.com" class="btn btn-primary">Get in touch</a>
           <a href="../index.html#work" class="btn btn-ghost">See other work</a>

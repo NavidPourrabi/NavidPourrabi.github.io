@@ -16,18 +16,17 @@ case-studies/
 assets/
   css/style.css                     → design tokens + all styles
   js/main.js                        → theme toggle, mobile nav, scroll reveal
-  images/portrait.jpg               → portrait used in hero + about
+  images/extendsell-*.png           → Figma exports used in the case study
   resume-navid-pourrabi.pdf         → downloadable résumé
 ```
 
 ## Still to do
 
-- **Extendsell screens** — every `.img-placeholder` in `case-studies/extendsell.html`
-  is waiting on a Figma export. Drop PNGs in `assets/images/` and swap the divs for `<img>`.
+- **Motion reel titles** — the six Vimeo embeds in the `#motion` section came from the
+  old portfolio labelled only "Video 1–6". Give each a real project name and reorder so
+  the motion work leads.
 - **Extendsell outcomes** — the case study deliberately carries no metrics yet. Add them
   once measured; don't publish a number that can't be backed up.
-- **Portrait** — `assets/images/portrait.jpg` is carried over from the old site. A proper
-  headshot would serve better.
 - **Film work** — the Oghdei and student-film cards on the home page don't link anywhere.
   If either deserves a full case study, copy `case-study-template.html`.
 

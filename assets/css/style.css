@@ -324,15 +324,6 @@ body.nav-open .site-header {
   margin-bottom: var(--space-lg);
 }
 
-.hero-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-accent), #ffb199);
-  border: 2px solid var(--color-surface);
-  box-shadow: 0 0 0 1px var(--color-border);
-}
-
 .hero-status {
   font-size: 0.85rem;
   color: var(--color-ink-soft);
@@ -523,28 +514,15 @@ body.nav-open .site-header {
 /* ==========================================================================
    About
    ========================================================================== */
+/* Single column — this site carries no portrait by choice. */
 .about-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(0, 68ch);
   gap: var(--space-2xl);
   align-items: start;
 }
 
-.about-portrait {
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: linear-gradient(160deg, #ffe3d6, #ff5a36 120%);
-  position: sticky;
-  top: 6rem;
-}
 
-.about-portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  mix-blend-mode: luminosity;
-}
 
 .about-lede {
   font-family: var(--font-display);
@@ -919,10 +897,6 @@ body.nav-open .site-header {
     grid-template-columns: 1fr;
   }
 
-  .about-portrait {
-    position: static;
-    max-width: 320px;
-  }
 
   .skills-grid {
     grid-template-columns: 1fr;
@@ -1230,11 +1204,6 @@ body.nav-open .site-header {
 /* ==========================================================================
    Portrait image in the hero kicker
    ========================================================================== */
-img.hero-avatar {
-  object-fit: cover;
-  object-position: center top;
-  background: var(--color-surface);
-}
 
 /* ==========================================================================
    Work cards that aren't links (film / teaching entries with no case study)
@@ -1246,4 +1215,115 @@ div.work-card:hover {
 
 div.work-card .work-title-row {
   justify-content: flex-start;
+}
+
+/* ==========================================================================
+   Design screenshots — framed figures with captions
+   ========================================================================== */
+.shot {
+  margin: 0;
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fff;
+}
+
+.shot figcaption {
+  margin-top: var(--space-2xs);
+  font-size: 0.82rem;
+  color: var(--color-ink-faint);
+  line-height: 1.45;
+}
+
+.shot-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  align-items: start;
+}
+
+.shot-single {
+  margin-top: var(--space-lg);
+}
+
+/* A tall screen (like the merchant admin page) gets a capped, scrollable frame
+   so one screenshot can't run away with the whole page. */
+.shot-tall img {
+  max-height: 620px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (max-width: 720px) {
+  .shot-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Motion reel — responsive Vimeo embeds
+   ========================================================================== */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.video-item {
+  margin: 0;
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: #0e0e0c;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-item figcaption {
+  margin-top: var(--space-2xs);
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+}
+
+.video-item figcaption span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-ink-faint);
+}
+
+@media (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Real image in a work-card thumbnail, instead of the gradient placeholder. */
+.work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
