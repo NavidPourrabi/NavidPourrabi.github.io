@@ -4,14 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Extendsell — Add-ons &amp; Frequently Bought Together — Navid Pourrabi</title>
-<meta name="description" content="Case study: designing and managing the add-ons and frequently-bought-together experience at Extendsell, for Shopify merchants and their shoppers." />
+<meta name="description" content="Case study: designing the add-ons and frequently-bought-together experience at Extendsell, for Shopify merchants and their shoppers." />
 
 <!--
-  FILL-IN GUIDE FOR THIS FILE
-  ---------------------------
-  Anything in [SQUARE BRACKETS] is a placeholder — replace it with your real
-  numbers, dates, team size, and quotes. Do not publish with the brackets in.
-  Every .img-placeholder block is where a screenshot or Figma export goes.
+  TO FINISH THIS PAGE
+  -------------------
+  1. Export the Extendsell screens from Figma as PNGs into assets/images/
+  2. Replace each .img-placeholder div with <img src="../assets/images/your-file.png" alt="...">
+  3. Add real outcome numbers in the "What it changed" section — or delete that
+     section entirely rather than publishing a number you can't back up.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,26 +48,27 @@
     <div class="wrap">
       <a href="../index.html#work" class="cs-back reveal">← Back to work</a>
 
-      <div class="eyebrow reveal">UI/UX Design · Product Management · E-commerce · [2025]</div>
+      <div class="eyebrow reveal">UI/UX Design · Product · E-commerce</div>
       <h1 class="reveal">Extendsell — making add-ons feel like help, not a hard sell.</h1>
       <p class="hero-sub reveal">
         Extendsell gives Shopify merchants a way to sell add-ons, warranties, and bundles
-        alongside their main products. I designed the merchant-side builder and the
-        shopper-side frequently-bought-together experience, and owned the rollout as PM.
+        alongside their main products. I work on both sides of it: the merchant building
+        an offer in the admin, and the shopper deciding whether to accept one — including
+        the frequently-bought-together experience.
       </p>
 
       <dl class="cs-meta-grid reveal">
         <div>
           <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Role</dt>
-          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">UI/UX Designer &amp; PM</dd>
+          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">UI/UX Designer</dd>
         </div>
         <div>
-          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Team</dt>
-          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">[X engineers, X designers]</dd>
+          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Focus</dt>
+          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">Add-ons &amp; FBT</dd>
         </div>
         <div>
-          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Timeline</dt>
-          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">[X months]</dd>
+          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Status</dt>
+          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">Ongoing</dd>
         </div>
         <div>
           <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Platform</dt>
@@ -78,7 +80,7 @@
 
   <div class="wrap">
     <div class="cs-cover reveal">
-      <div class="img-placeholder" style="height:100%;">Cover image — the add-on builder and the storefront widget side by side (16:8)</div>
+      <div class="img-placeholder" style="height:100%;">Cover — the add-on builder and the storefront widget side by side (export from Figma, 16:8)</div>
     </div>
   </div>
 
@@ -89,97 +91,51 @@
       <section class="section reveal">
         <h2>Context</h2>
         <p>
-          A Shopify store makes most of its margin on the things a shopper adds <em>after</em>
-          deciding on the main product — the case with the phone, the warranty with the
-          appliance, the second filter with the coffee machine. Extendsell exists to make
-          those attachments easy to set up and easy to accept.
+          A store makes much of its margin on what a shopper adds <em>after</em> deciding on
+          the main product — the case with the phone, the warranty with the appliance, the
+          second filter with the coffee machine. Extendsell exists to make those attachments
+          easy for a merchant to set up and easy for a shopper to accept.
         </p>
         <p>
-          Two products sat inside that promise, and I worked on both:
+          Two features sit inside that promise, and I work on both:
           <strong>add-ons</strong>, where a merchant attaches optional extras to a specific
-          product, and <strong>frequently bought together (FBT)</strong>, where the store
-          suggests a bundle based on what other shoppers actually buy in the same order.
+          product, and <strong>frequently bought together</strong>, where the store suggests
+          a bundle based on what shoppers actually buy in the same order.
         </p>
       </section>
 
-      <!-- ============ PROBLEM ============ -->
-      <section class="section reveal">
-        <h2>The problem</h2>
-        <p>
-          <!-- FILL IN: replace with the specific pain you heard from merchants. -->
-          Merchants already believed in cross-sell — they just couldn't get it to work.
-          Setting up an offer meant editing product metafields or paying a developer, so
-          most merchants configured one bundle, saw nothing happen, and never came back.
-          On the storefront, suggestions showed up as a generic carousel below the fold
-          that shoppers scrolled straight past.
-        </p>
-        <ul>
-          <li>Configuring a single add-on took [X] steps and often ended in a support ticket.</li>
-          <li>[X]% of merchants who installed the app never published a live offer.</li>
-          <li>Shopper-side attach rate sat at [X]%, well under the category benchmark.</li>
-          <li>Recommendations were rule-based and frequently nonsensical — accessories suggested for accessories.</li>
-        </ul>
-      </section>
-
-      <!-- ============ RESEARCH ============ -->
-      <section class="section reveal">
-        <h2>Research</h2>
-        <p>
-          I ran [X] interviews with merchants across [store sizes / categories], sat in on
-          [X] support calls, and went through [X months] of tickets tagging every complaint
-          by theme. In parallel I pulled funnel data on where merchants dropped out of setup
-          and where shoppers ignored the widget.
-        </p>
-        <p>
-          The finding that reframed the project: merchants weren't asking for more
-          configuration power. They were asking to be told what a good offer looks like.
-          The people who succeeded were the ones who copied a competitor's bundle — everyone
-          else stared at an empty form.
-        </p>
-        <div class="cs-image-row">
-          <div class="img-placeholder">Affinity map from merchant interviews</div>
-          <div class="img-placeholder">Setup funnel — where merchants dropped off</div>
-        </div>
-        <p>
-          <!-- FILL IN: a real quote from a merchant interview is the single most
-               persuasive thing you can put on this page. -->
-          <em>"[Quote from a merchant — one sentence, in their words, about why setup failed them.]"</em>
-        </p>
-      </section>
-
-      <!-- ============ TWO USERS ============ -->
+      <!-- ============ THE TENSION ============ -->
       <section class="section reveal">
         <h2>One product, two users who want opposite things</h2>
         <p>
-          The merchant wants the offer to be visible, frequent, and hard to miss. The shopper
-          wants to not be sold to. Every design decision on this project was a negotiation
-          between those two, so I made the tension explicit and used it as the review
-          criterion: an offer ships only if it survives both readings.
+          The merchant wants the offer visible, frequent, and hard to miss. The shopper wants
+          to not be sold to. Almost every decision on this project is a negotiation between
+          those two, so I made the tension the review criterion rather than something to
+          resolve once: a design ships only if it survives both readings.
         </p>
         <ul>
-          <li><strong>Merchant view —</strong> can they build a sensible offer in under [X] minutes, without support?</li>
-          <li><strong>Shopper view —</strong> does the suggestion look like a helpful default, or like an upsell popup?</li>
+          <li><strong>Merchant view —</strong> can they build a sensible offer quickly, without support?</li>
+          <li><strong>Shopper view —</strong> does the suggestion read as a helpful default, or as an upsell popup?</li>
         </ul>
       </section>
 
       <!-- ============ ADD-ONS ============ -->
       <section class="section reveal">
-        <h2>Designing the add-on builder</h2>
+        <h2>The add-on builder</h2>
         <p>
-          I replaced the empty form with a starting point. The builder opens on templates
-          drawn from what actually converts in that merchant's category — protection plans,
-          consumables, "complete the look" — and every template lands pre-filled and editable.
-          Setup became: pick a shape, adjust it, preview it live, publish.
+          The merchant side is a configuration problem disguised as a design problem. An empty
+          form asks the merchant to already know what a good offer looks like — most don't.
+          So the builder leads with a starting point and a live preview, and keeps the rules
+          in plain language instead of platform syntax.
         </p>
         <ul>
-          <li>Live storefront preview beside the form, so the merchant never publishes blind.</li>
-          <li>Rules expressed in plain language ("show this with any product tagged <em>camera</em>") instead of metafield syntax.</li>
-          <li>Built on Shopify Polaris so the app felt native to the admin merchants already knew.</li>
-          <li>A guardrail warning when an offer would show more than [X] add-ons at once.</li>
+          <li>Live storefront preview beside the form, so nothing gets published blind.</li>
+          <li>Offer rules written as sentences a merchant can read back to themselves.</li>
+          <li>Built to sit inside the Shopify admin, so it feels native rather than bolted on.</li>
         </ul>
         <div class="cs-image-row">
-          <div class="img-placeholder">Add-on builder — template picker</div>
-          <div class="img-placeholder">Add-on builder — live preview state</div>
+          <div class="img-placeholder">Add-on builder — setup view (Figma export)</div>
+          <div class="img-placeholder">Add-on builder — live preview state (Figma export)</div>
         </div>
       </section>
 
@@ -187,89 +143,29 @@
       <section class="section reveal">
         <h2>Frequently bought together</h2>
         <p>
-          FBT had a credibility problem: shoppers ignore a recommendation they don't believe.
-          So the design leads with the reason. The bundle states plainly what it is, shows the
-          combined price against the separate one, and lets a shopper drop any single item
+          FBT has a credibility problem: a shopper ignores a recommendation they don't believe.
+          So the design leads with the reason. The bundle says plainly what it is, shows the
+          combined price against the separate one, and lets a shopper drop a single item
           without losing the rest of the offer.
         </p>
         <ul>
-          <li>Bundle presented as one decision with individually removable items — not an all-or-nothing checkbox.</li>
-          <li>Savings shown as an absolute amount and a percentage, because merchants' shoppers responded to different framings.</li>
-          <li>Placed directly under the buy button, where intent is highest, rather than at the bottom of the page.</li>
-          <li>Falls back to merchant-curated picks when there isn't enough order history to make an honest recommendation.</li>
-          <li>Inherits the store's own type and colour tokens, so it reads as part of the shop rather than a bolted-on app.</li>
+          <li>The bundle is one decision made of individually removable parts — not all-or-nothing.</li>
+          <li>Savings shown in absolute and percentage terms, since different shoppers read different framings.</li>
+          <li>Placed where purchase intent is highest, rather than at the bottom of the page.</li>
+          <li>Inherits the store's own type and colour, so it reads as part of the shop.</li>
         </ul>
         <div class="cs-image-row">
-          <div class="img-placeholder">FBT widget — default state</div>
-          <div class="img-placeholder">FBT widget — item removed / price updating</div>
+          <div class="img-placeholder">FBT widget — default state (Figma export)</div>
+          <div class="img-placeholder">FBT widget — item removed, price updating (Figma export)</div>
         </div>
-      </section>
-
-      <!-- ============ SHIPPING ============ -->
-      <section class="section reveal">
-        <h2>Getting it shipped</h2>
-        <p>
-          As PM on this I wrote the requirements, cut the scope, and sequenced the release.
-          [X] features were pushed out of v1 to protect the setup flow, which was the only
-          thing standing between a new merchant and their first live offer.
-        </p>
-        <ul>
-          <li>Wrote the PRD and acceptance criteria; ran weekly design/engineering reviews.</li>
-          <li>Rolled out to [X]% of merchants behind a flag, watching attach rate and page-load impact.</li>
-          <li>A/B tested [placement / copy / savings framing]; kept the variant that won on attach rate without hurting conversion.</li>
-          <li>Wrote the merchant-facing help docs and onboarding copy myself, so setup language matched the UI exactly.</li>
-        </ul>
-      </section>
-
-      <!-- ============ OUTCOME ============ -->
-      <section class="section reveal">
-        <h2>Outcome</h2>
-        <p>
-          <!-- FILL IN: replace every [X]. If a number isn't measured, delete the stat
-               rather than guessing — a case study with three real numbers beats one
-               with six invented ones. -->
-          [One or two sentences on what changed after launch, and over what period.]
-        </p>
-        <div class="cs-outcome-grid">
-          <div class="outcome-stat">
-            <div class="stat-num">+[X]%</div>
-            <div class="stat-label">Average order value</div>
-          </div>
-          <div class="outcome-stat">
-            <div class="stat-num">+[X]%</div>
-            <div class="stat-label">Add-on attach rate</div>
-          </div>
-          <div class="outcome-stat">
-            <div class="stat-num">[X] min</div>
-            <div class="stat-label">Median time to first live offer</div>
-          </div>
-          <div class="outcome-stat">
-            <div class="stat-num">−[X]%</div>
-            <div class="stat-label">Setup support tickets</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ REFLECTION ============ -->
-      <section class="section reveal">
-        <h2>What I'd do differently</h2>
-        <p>
-          I under-invested in the empty state for stores with no order history. FBT needs data
-          to be credible, and new stores — the ones most eager to install the app — had none.
-          The curated fallback came later than it should have; it belonged in v1.
-        </p>
-        <p>
-          <!-- FILL IN: one more honest reflection. Hiring managers read this section
-               closely — it's where they find out whether you learn from shipping. -->
-          [Second thing you'd change, and what it taught you.]
-        </p>
       </section>
 
       <!-- ============ NEXT ============ -->
       <section class="cs-next reveal">
         <div class="eyebrow" style="justify-content:center;">Next</div>
         <h2 style="margin-bottom:1.5rem;">Want the full walkthrough?</h2>
-        <div class="cta-actions" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <p class="hero-sub" style="margin-inline:auto;">Happy to walk through the Figma files and the decisions behind them.</p>
+        <div class="cta-actions" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
           <a href="mailto:navid.pourrabi@gmail.com" class="btn btn-primary">Get in touch</a>
           <a href="../index.html#work" class="btn btn-ghost">See other work</a>
         </div>
@@ -282,10 +178,11 @@
 
 <footer class="site-footer">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;width:100%;">
-    <span>© <span data-year></span> Navid Pourrabi — UI/UX Designer &amp; Product Manager.</span>
+    <span>© <span data-year></span> Navid Pourrabi — Tilburg, Netherlands.</span>
     <div class="footer-links">
       <a href="mailto:navid.pourrabi@gmail.com">Email</a>
       <a href="../resume.html">Résumé</a>
+      <a href="https://www.linkedin.com/in/navidpourrabi" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/NavidPourrabi" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
