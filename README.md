@@ -63,11 +63,16 @@ Then open `http://localhost:8000`.
 
 ## Deploy with GitHub Pages
 
-1. Repo → **Settings → Pages**
-2. **Source** → `Deploy from a branch`
-3. Branch `main`, folder `/ (root)` → **Save**
+This repo is a **user site** (`NavidPourrabi.github.io`), so anything pushed to `main`
+publishes automatically at the root domain:
 
-Published at `https://navidpourrabi.github.io/Portfolio-Website/` within a minute or two.
+**https://navidpourrabi.github.io/**
+
+No subpath, no build step. If Pages isn't switched on yet: repo → **Settings → Pages**
+→ **Source** = `Deploy from a branch` → branch `main`, folder `/ (root)` → **Save**.
+
+Changes go live a minute or two after each push. Because it publishes on push, don't
+push while any `[PLACEHOLDER]` is still in the HTML.
 
 ## Notes
 
