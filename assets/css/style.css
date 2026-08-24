@@ -20,8 +20,12 @@
   /* Accents */
   --sage: #406e5a;
   --sage-soft: #dbe6df;
-  --clay: #b5643a;
+  --clay: #9c4b25;
   --clay-soft: #f0ddd0;
+  --violet: #6248b8;
+  --violet-soft: #e7e2f6;
+  --amber: #7d5c11;
+  --amber-soft: #f4e8ca;
 
   /* Legacy aliases — older markup still references these names */
   --color-bg: var(--paper);
@@ -72,6 +76,10 @@
   --sage-soft: #1e2a24;
   --clay: #d98a5c;
   --clay-soft: #2c1f17;
+  --violet: #ab9cf2;
+  --violet-soft: #221d33;
+  --amber: #dcb45c;
+  --amber-soft: #2b2415;
 }
 
 /* ==========================================================================
@@ -1433,5 +1441,187 @@ a.work-card:hover .work-arrow {
 
   .marquee-track {
     animation: none;
+  }
+}
+
+/* ==========================================================================
+   Colour bands — full-bleed tinted sections so the page isn't one flat cream
+   ========================================================================== */
+.band {
+  border-block: 1px solid var(--line);
+}
+
+.band-sage   { background: var(--sage-soft); }
+.band-clay   { background: var(--clay-soft); }
+.band-violet { background: var(--violet-soft); }
+.band-amber  { background: var(--amber-soft); }
+
+/* Cards sitting on a tinted band need to lift off it. */
+.band .work-card,
+.band .process-step,
+.band .cta-block,
+.band .video-frame {
+  background: var(--paper-2);
+}
+
+/* ==========================================================================
+   Accent rotation — metrics, process steps, and tags each take a turn
+   ========================================================================== */
+.metric:nth-child(1) .metric-num { color: var(--sage); }
+.metric:nth-child(2) .metric-num { color: var(--clay); }
+.metric:nth-child(3) .metric-num { color: var(--violet); }
+.metric:nth-child(4) .metric-num { color: var(--amber); }
+
+.process-step:nth-child(1) .step-num { color: var(--sage); }
+.process-step:nth-child(2) .step-num { color: var(--clay); }
+.process-step:nth-child(3) .step-num { color: var(--violet); }
+.process-step:nth-child(4) .step-num { color: var(--amber); }
+
+.process-step:nth-child(1):hover { background: var(--sage-soft); }
+.process-step:nth-child(2):hover { background: var(--clay-soft); }
+.process-step:nth-child(3):hover { background: var(--violet-soft); }
+.process-step:nth-child(4):hover { background: var(--amber-soft); }
+
+.marquee span:nth-child(4n+1)::after { background: var(--sage); }
+.marquee span:nth-child(4n+2)::after { background: var(--clay); }
+.marquee span:nth-child(4n+3)::after { background: var(--violet); }
+.marquee span:nth-child(4n+4)::after { background: var(--amber); }
+
+/* Per-project tag colours */
+.work-tag.is-violet { background: var(--violet); color: #fff; border-color: var(--violet); }
+.work-tag.is-clay   { background: var(--clay);   color: #fff; border-color: var(--clay); }
+.work-tag.is-sage   { background: var(--sage);   color: #fff; border-color: var(--sage); }
+
+.pill-violet { border-color: color-mix(in srgb, var(--violet) 40%, transparent); background: var(--violet-soft); color: var(--violet); }
+.pill-sage   { border-color: color-mix(in srgb, var(--sage) 40%, transparent);   background: var(--sage-soft);   color: var(--sage); }
+.pill-amber  { border-color: color-mix(in srgb, var(--amber) 40%, transparent);  background: var(--amber-soft);  color: var(--amber); }
+
+a.work-card:nth-of-type(2):hover { border-color: var(--clay); }
+a.work-card:nth-of-type(3):hover { border-color: var(--violet); }
+
+/* ==========================================================================
+   Case study — visual-first layout
+   ========================================================================== */
+
+/* A figure that breaks out of the text column to the full page width. */
+.bleed {
+  margin: 0;
+  padding-block: var(--space-2xl);
+}
+
+.bleed-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+/* Numbered feature header — big, short, no paragraph needed. */
+.feature-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.feature-num {
+  font-family: var(--font-voice);
+  font-style: italic;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.9;
+  color: var(--accent, var(--sage));
+}
+
+.feature-head h2 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  flex: 1 1 12ch;
+}
+
+.feature-note {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin-bottom: var(--space-lg);
+}
+
+/* Short labelled facts instead of prose paragraphs. */
+.fact-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--line);
+}
+
+.fact dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-3xs);
+}
+
+.fact dd {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+/* Image layouts */
+.gal {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.gal-2      { grid-template-columns: repeat(2, 1fr); }
+.gal-side   { grid-template-columns: 2.2fr 1fr; align-items: start; }
+.gal-1      { grid-template-columns: 1fr; }
+
+.gal figure {
+  margin: 0;
+}
+
+.gal img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fff;
+  transition: transform 0.6s var(--ease);
+}
+
+.gal figure:hover img {
+  transform: translateY(-4px);
+}
+
+.gal figcaption {
+  margin-top: var(--space-2xs);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+/* Swatch strip */
+.swatches {
+  display: flex;
+  gap: var(--space-2xs);
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 820px) {
+  .gal-2,
+  .gal-side {
+    grid-template-columns: 1fr;
   }
 }

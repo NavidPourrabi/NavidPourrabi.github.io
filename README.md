@@ -25,7 +25,7 @@ assets/
 ## Still to do
 
 - **Real Vimeo titles are now in place.** If any label is wrong, edit the `#motion` section.
-- **Extendsell outcomes** — the case study deliberately carries no metrics yet. Add them
+- **Extendsell outcomes** — the case study carries no metrics yet, deliberately. Add them
   once measured; don't publish a number that can't be backed up.
 - **Two more photos** — the headshot and the café photo were never saved to disk; only
   the workshop photo made it in. Drop them in `assets/images/` to use them.
