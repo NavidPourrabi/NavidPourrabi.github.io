@@ -1,8 +1,13 @@
 // ==========================================================================
-// Theme toggle (light / dark) — respects the visitor's OS preference on first
-// load, then remembers their explicit choice across pages and visits.
-// The inline script in each page's <head> applies the stored theme before
-// first paint; this block keeps the toggle buttons in sync.
+// Navid Pourrabi — portfolio behaviour
+// Light is the default theme for everyone; the OS preference is deliberately
+// ignored on a first visit. A visitor's explicit choice is remembered.
+// ==========================================================================
+
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ==========================================================================
+// Theme toggle
 // ==========================================================================
 (function initTheme() {
   const root = document.documentElement;
@@ -25,9 +30,7 @@
     }
   }
 
-  const stored = readStored();
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  let theme = stored || (prefersDark ? 'dark' : 'light');
+  let theme = readStored() === 'dark' ? 'dark' : 'light';
   root.setAttribute('data-theme', theme);
   updateToggleIcons(theme);
 
@@ -49,65 +52,185 @@
 })();
 
 // ==========================================================================
-// Mobile nav toggle
+// Hero headline — slide each line up once the fonts have settled
+// ==========================================================================
+(function initHero() {
+  const run = () => document.body.classList.add('is-loaded');
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(run);
+    // Never let a font that fails to load leave the headline hidden.
+    setTimeout(run, 1200);
+  } else {
+    run();
+  }
+})();
+
+// ==========================================================================
+// Mobile nav
 // ==========================================================================
 (function initNav() {
   const navToggle = document.querySelector('[data-nav-toggle]');
-  const body = document.body;
-
   if (!navToggle) return;
 
   navToggle.addEventListener('click', () => {
-    body.classList.toggle('nav-open');
+    document.body.classList.toggle('nav-open');
   });
 
   document.querySelectorAll('.nav-links a').forEach((link) => {
-    link.addEventListener('click', () => body.classList.remove('nav-open'));
+    link.addEventListener('click', () => document.body.classList.remove('nav-open'));
   });
 })();
 
 // ==========================================================================
-// Scroll reveal — fades/slides elements in as they enter the viewport.
+// Scroll reveal, staggered within each group
 // ==========================================================================
 (function initReveal() {
   const items = document.querySelectorAll('.reveal');
-  if (!items.length) return;
+  if (!items.length || REDUCED || !('IntersectionObserver' in window)) return;
 
-  if (!('IntersectionObserver' in window)) {
-    // No JS-driven animation support — leave elements in their default,
-    // fully-visible state (see .reveal vs .reveal-init in style.css).
-    return;
-  }
-
-  // Opt into the hidden starting state only once we know JS + IntersectionObserver
-  // both work, so content never gets stuck invisible.
   items.forEach((el) => el.classList.add('reveal-init'));
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+
+        // Stagger siblings that enter together, capped so a long list
+        // never leaves the last item waiting a noticeable amount of time.
+        const siblings = [...entry.target.parentElement.children].filter((el) =>
+          el.classList.contains('reveal')
+        );
+        const index = siblings.indexOf(entry.target);
+        entry.target.style.setProperty('--reveal-delay', Math.min(index, 5) * 80 + 'ms');
+
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.12, rootMargin: '0px 0px -50px 0px' }
   );
 
   items.forEach((el) => observer.observe(el));
 
-  // Safety net: if anything is somehow still hidden after load (e.g. a
-  // layout edge case), reveal it rather than leave it permanently blank.
+  // Safety net: never leave content permanently invisible.
   window.addEventListener('load', () => {
-    setTimeout(() => {
-      items.forEach((el) => el.classList.add('is-visible'));
-    }, 2000);
+    setTimeout(() => items.forEach((el) => el.classList.add('is-visible')), 2500);
   });
 })();
 
 // ==========================================================================
-// Active nav link highlighting based on current page
+// Counters — numbers count up the first time they're seen
+// ==========================================================================
+(function initCounters() {
+  const nums = document.querySelectorAll('[data-count]');
+  if (!nums.length || REDUCED || !('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        countUp(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  nums.forEach((el) => observer.observe(el));
+
+  function countUp(el) {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    if (!isFinite(target)) return;
+
+    const duration = 1100;
+    const start = performance.now();
+
+    function frame(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      // easeOutExpo
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+  }
+})();
+
+// ==========================================================================
+// Magnetic buttons — the button leans toward the cursor
+// ==========================================================================
+(function initMagnetic() {
+  if (REDUCED || window.matchMedia('(hover: none)').matches) return;
+
+  document.querySelectorAll('.btn').forEach((btn) => {
+    btn.addEventListener('pointermove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.18}px, ${y * 0.28}px)`;
+    });
+
+    const reset = () => { btn.style.transform = ''; };
+    btn.addEventListener('pointerleave', reset);
+    btn.addEventListener('blur', reset);
+  });
+})();
+
+// ==========================================================================
+// Parallax — elements drift gently against the scroll
+// ==========================================================================
+(function initParallax() {
+  const items = document.querySelectorAll('[data-parallax]');
+  if (!items.length || REDUCED) return;
+
+  let ticking = false;
+
+  function update() {
+    const viewportH = window.innerHeight;
+
+    items.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > viewportH) return;
+
+      const speed = parseFloat(el.dataset.parallax) || 0.08;
+      // -1 → element entering from below, 1 → leaving at the top
+      const progress = (rect.top + rect.height / 2 - viewportH / 2) / viewportH;
+      el.style.transform = `translate3d(0, ${progress * speed * -100}px, 0)`;
+    });
+
+    ticking = false;
+  }
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    },
+    { passive: true }
+  );
+
+  update();
+})();
+
+// ==========================================================================
+// Marquee — duplicate the track so the loop has no visible seam
+// ==========================================================================
+(function initMarquee() {
+  document.querySelectorAll('.marquee').forEach((marquee) => {
+    const track = marquee.querySelector('.marquee-track');
+    if (!track) return;
+    const clone = track.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    marquee.appendChild(clone);
+  });
+})();
+
+// ==========================================================================
+// Active nav link
 // ==========================================================================
 (function highlightActiveNav() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
@@ -123,6 +246,7 @@
 // Footer year
 // ==========================================================================
 (function setYear() {
-  const el = document.querySelector('[data-year]');
-  if (el) el.textContent = new Date().getFullYear();
+  document.querySelectorAll('[data-year]').forEach((el) => {
+    el.textContent = new Date().getFullYear();
+  });
 })();

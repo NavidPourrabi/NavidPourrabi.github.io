@@ -17,27 +17,28 @@ assets/
   css/style.css                     → design tokens + all styles
   js/main.js                        → theme toggle, mobile nav, scroll reveal
   images/extendsell-*.png           → Figma exports used in the case study
+  images/thumb-*.jpg                → Vimeo stills for the work cards
+  images/navid-workshop.jpg         → photo used in the About section
   resume-navid-pourrabi.pdf         → downloadable résumé
 ```
 
 ## Still to do
 
-- **Motion reel titles** — the six Vimeo embeds in the `#motion` section came from the
-  old portfolio labelled only "Video 1–6". Give each a real project name and reorder so
-  the motion work leads.
+- **Real Vimeo titles are now in place.** If any label is wrong, edit the `#motion` section.
 - **Extendsell outcomes** — the case study deliberately carries no metrics yet. Add them
   once measured; don't publish a number that can't be backed up.
-- **Film work** — the Oghdei and student-film cards on the home page don't link anywhere.
-  If either deserves a full case study, copy `case-study-template.html`.
+- **Two more photos** — the headshot and the café photo were never saved to disk; only
+  the workshop photo made it in. Drop them in `assets/images/` to use them.
 
 ## Design system
 
 All tokens live in `:root` at the top of `assets/css/style.css`:
 
-- `--color-accent` (persimmon) — headings, links, emphasis
-- `--color-data` (slate blue) — metrics and outcome numbers only
-- `--font-display` Fraunces (serif headlines), `--font-body` Inter
-- Dark mode overrides sit in the `[data-theme='dark']` block below it
+- `--paper` cream base, `--ink` near-black, `--line` hairline
+- `--sage` primary accent, `--clay` secondary accent — both AA-contrast checked
+- `--font-display` / `--font-body` Instrument Sans, `--font-voice` Instrument Serif italic
+- Light is the default for everyone; the OS setting is deliberately ignored. Dark
+  overrides sit in the `[data-theme=dark]` block
 
 Change a token, the whole site follows.
 
