@@ -1,31 +1,34 @@
 /* ==========================================================================
    Navid Pourrabi — portfolio
-   Direction: "Studio" — cream paper, fine grain, sage accent, oversized
-   geometric sans. Light by default; dark is opt-in via the header toggle.
+   Direction: "Studio" — the "Olive brown" palette: golden-batter paper, fine grain,
+   olive/rust/caramel accents, oversized geometric sans. Light by default.
    ========================================================================== */
 
 /* ==========================================================================
    Design tokens
    ========================================================================== */
 :root {
-  /* Paper & ink */
-  --paper: #ede7d6;
-  --paper-2: #f5f1e4;
-  --paper-3: #e2dac4;
-  --ink: #1b211c;
-  --ink-soft: #4e554c;
-  --ink-faint: #616658;
-  --line: #d6cdb6;
+  /* Paper & ink — "Olive brown" palette
+     Cowhide Cocoa #442D1C · Spiced Wine #743014 · Toasted Caramel #84592B
+     Olive Harvest #9D9167 · Golden Batter #E8D1A7                        */
+  --paper: #e8d1a7;
+  --paper-2: #f2e6cf;
+  --paper-3: #d5c096;
+  --ink: #442d1c;
+  --ink-soft: #624b35;
+  --ink-faint: #654e38;
+  --line: #c9b68c;
 
-  /* Accents */
-  --sage: #406e5a;
-  --sage-soft: #dbe6df;
-  --clay: #9c4b25;
-  --clay-soft: #f0ddd0;
-  --violet: #6248b8;
-  --violet-soft: #e7e2f6;
-  --amber: #7d5c11;
-  --amber-soft: #f4e8ca;
+  /* Accents — every value below clears WCAG AA on paper, on cards,
+     and on its own band tint. Don't lighten without re-checking. */
+  --olive: #5b543c;
+  --olive-soft: #ebe1ce;
+  --rust: #743014;
+  --rust-soft: #ede0cf;
+  --cocoa: #442d1c;
+  --cocoa-soft: #dfcdb4;
+  --caramel: #744e26;
+  --caramel-soft: #ece0cd;
 
   /* Legacy aliases — older markup still references these names */
   --color-bg: var(--paper);
@@ -34,9 +37,9 @@
   --color-ink-soft: var(--ink-soft);
   --color-ink-faint: var(--ink-faint);
   --color-border: var(--line);
-  --color-accent: var(--clay);
-  --color-data: var(--sage);
-  --color-data-soft: var(--sage-soft);
+  --color-accent: var(--rust);
+  --color-data: var(--olive);
+  --color-data-soft: var(--olive-soft);
 
   /* Type */
   --font-display: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -65,21 +68,21 @@
 }
 
 [data-theme='dark'] {
-  --paper: #14170f;
-  --paper-2: #1c2019;
-  --paper-3: #262b22;
-  --ink: #ece7d6;
-  --ink-soft: #b4b3a1;
-  --ink-faint: #7d8175;
-  --line: #2e342a;
-  --sage: #85c0a5;
-  --sage-soft: #1e2a24;
-  --clay: #d98a5c;
-  --clay-soft: #2c1f17;
-  --violet: #ab9cf2;
-  --violet-soft: #221d33;
-  --amber: #dcb45c;
-  --amber-soft: #2b2415;
+  --paper: #1f140d;
+  --paper-2: #2d1e12;
+  --paper-3: #382517;
+  --ink: #e8d1a7;
+  --ink-soft: #b4a07f;
+  --ink-faint: #ac9879;
+  --line: #3a3020;
+  --olive: #b4a47a;
+  --olive-soft: #352b1d;
+  --rust: #bc946f;
+  --rust-soft: #381d0f;
+  --cocoa: #d4be98;
+  --cocoa-soft: #342215;
+  --caramel: #b08e62;
+  --caramel-soft: #392615;
 }
 
 /* ==========================================================================
@@ -174,12 +177,12 @@ button {
 }
 
 ::selection {
-  background: var(--sage);
+  background: var(--olive);
   color: var(--paper-2);
 }
 
 :focus-visible {
-  outline: 2px solid var(--sage);
+  outline: 2px solid var(--olive);
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -223,7 +226,7 @@ button {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--sage);
+  background: var(--olive);
 }
 
 /* ==========================================================================
@@ -258,7 +261,7 @@ body.nav-open .site-header {
 }
 
 .logo span {
-  color: var(--sage);
+  color: var(--olive);
 }
 
 .nav-links {
@@ -282,7 +285,7 @@ body.nav-open .site-header {
   bottom: -4px;
   width: 100%;
   height: 1.5px;
-  background: var(--sage);
+  background: var(--olive);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.35s var(--ease);
@@ -320,7 +323,7 @@ body.nav-open .site-header {
 
 .theme-toggle:hover {
   transform: rotate(-25deg) scale(1.08);
-  background: var(--sage-soft);
+  background: var(--olive-soft);
 }
 
 .nav-toggle {
@@ -373,7 +376,7 @@ body.nav-open .site-header {
 }
 
 .btn-primary:hover {
-  background: var(--sage);
+  background: var(--olive);
   color: #fff;
 }
 
@@ -424,15 +427,15 @@ body.nav-open .site-header {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--sage);
-  box-shadow: 0 0 0 0 color-mix(in srgb, var(--sage) 60%, transparent);
+  background: var(--olive);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--olive) 60%, transparent);
   animation: pulse 2.6s infinite;
 }
 
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--sage) 55%, transparent); }
-  70%  { box-shadow: 0 0 0 9px color-mix(in srgb, var(--sage) 0%, transparent); }
-  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--sage) 0%, transparent); }
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--olive) 55%, transparent); }
+  70%  { box-shadow: 0 0 0 9px color-mix(in srgb, var(--olive) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--olive) 0%, transparent); }
 }
 
 .hero h1 {
@@ -444,11 +447,11 @@ body.nav-open .site-header {
 
 .hero h1 .line-2 {
   display: block;
-  color: var(--sage);
+  color: var(--olive);
 }
 
 .hero h1 em {
-  color: var(--clay);
+  color: var(--rust);
 }
 
 .hero-sub {
@@ -496,9 +499,9 @@ body.nav-open .site-header {
 }
 
 .role-chip.is-data {
-  border-color: color-mix(in srgb, var(--sage) 40%, transparent);
-  background: var(--sage-soft);
-  color: var(--sage);
+  border-color: color-mix(in srgb, var(--olive) 40%, transparent);
+  background: var(--olive-soft);
+  color: var(--olive);
 }
 
 .role-sep {
@@ -547,7 +550,7 @@ body.nav-open .site-header {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--clay);
+  background: var(--rust);
   flex-shrink: 0;
 }
 
@@ -604,7 +607,7 @@ body.nav-open .site-header {
 
 a.work-card:hover {
   transform: translateY(-6px);
-  border-color: var(--sage);
+  border-color: var(--olive);
 }
 
 .work-card.featured {
@@ -677,8 +680,8 @@ a.work-card:hover .work-thumb img {
 }
 
 a.work-card:hover .work-arrow {
-  background: var(--sage);
-  border-color: var(--sage);
+  background: var(--olive);
+  border-color: var(--olive);
   color: #fff;
   transform: rotate(-45deg);
 }
@@ -706,9 +709,9 @@ a.work-card:hover .work-arrow {
 }
 
 .pill-role {
-  border-color: color-mix(in srgb, var(--clay) 40%, transparent);
-  background: var(--clay-soft);
-  color: var(--clay);
+  border-color: color-mix(in srgb, var(--rust) 40%, transparent);
+  background: var(--rust-soft);
+  color: var(--rust);
 }
 
 .work-outcome {
@@ -723,7 +726,7 @@ a.work-card:hover .work-arrow {
   font-family: var(--font-display);
   font-size: 1.3rem;
   letter-spacing: -0.03em;
-  color: var(--sage);
+  color: var(--olive);
 }
 
 .work-outcome .o-label {
@@ -762,7 +765,7 @@ a.work-card:hover .work-arrow {
 
 .video-item:hover .video-frame {
   transform: translateY(-4px);
-  border-color: var(--sage);
+  border-color: var(--olive);
 }
 
 .video-frame iframe {
@@ -923,14 +926,14 @@ a.work-card:hover .work-arrow {
 
 .process-step:hover {
   transform: translateY(-5px);
-  background: var(--sage-soft);
+  background: var(--olive-soft);
 }
 
 .process-step .step-num {
   font-family: var(--font-voice);
   font-style: italic;
   font-size: 2rem;
-  color: var(--sage);
+  color: var(--olive);
   line-height: 1;
   margin-bottom: var(--space-2xs);
 }
@@ -992,8 +995,8 @@ a.work-card:hover .work-arrow {
 }
 
 .contact-list a:hover {
-  color: var(--sage);
-  border-color: var(--sage);
+  color: var(--olive);
+  border-color: var(--olive);
 }
 
 /* ==========================================================================
@@ -1012,7 +1015,7 @@ a.work-card:hover .work-arrow {
 }
 
 .footer-links a:hover {
-  color: var(--sage);
+  color: var(--olive);
 }
 
 /* ==========================================================================
@@ -1031,7 +1034,7 @@ a.work-card:hover .work-arrow {
 }
 
 .cs-back:hover {
-  color: var(--sage);
+  color: var(--olive);
   transform: translateX(-5px);
 }
 
@@ -1090,7 +1093,7 @@ a.work-card:hover .work-arrow {
   top: 0.72em;
   width: 8px;
   height: 1.5px;
-  background: var(--sage);
+  background: var(--olive);
 }
 
 .cs-image-row {
@@ -1123,7 +1126,7 @@ a.work-card:hover .work-arrow {
   font-family: var(--font-display);
   font-size: 2.2rem;
   letter-spacing: -0.04em;
-  color: var(--sage);
+  color: var(--olive);
 }
 
 .outcome-stat .stat-label {
@@ -1246,7 +1249,7 @@ a.work-card:hover .work-arrow {
 }
 
 .resume-role .r-org {
-  color: var(--sage);
+  color: var(--olive);
   font-size: 0.94rem;
   margin-top: 0.1rem;
 }
@@ -1270,7 +1273,7 @@ a.work-card:hover .work-arrow {
   top: 0.72em;
   width: 8px;
   height: 1.5px;
-  background: var(--clay);
+  background: var(--rust);
 }
 
 .tag-cloud {
@@ -1451,10 +1454,10 @@ a.work-card:hover .work-arrow {
   border-block: 1px solid var(--line);
 }
 
-.band-sage   { background: var(--sage-soft); }
-.band-clay   { background: var(--clay-soft); }
-.band-violet { background: var(--violet-soft); }
-.band-amber  { background: var(--amber-soft); }
+.band-olive   { background: var(--olive-soft); }
+.band-rust   { background: var(--rust-soft); }
+.band-cocoa { background: var(--cocoa-soft); }
+.band-caramel  { background: var(--caramel-soft); }
 
 /* Cards sitting on a tinted band need to lift off it. */
 .band .work-card,
@@ -1467,37 +1470,37 @@ a.work-card:hover .work-arrow {
 /* ==========================================================================
    Accent rotation — metrics, process steps, and tags each take a turn
    ========================================================================== */
-.metric:nth-child(1) .metric-num { color: var(--sage); }
-.metric:nth-child(2) .metric-num { color: var(--clay); }
-.metric:nth-child(3) .metric-num { color: var(--violet); }
-.metric:nth-child(4) .metric-num { color: var(--amber); }
+.metric:nth-child(1) .metric-num { color: var(--olive); }
+.metric:nth-child(2) .metric-num { color: var(--rust); }
+.metric:nth-child(3) .metric-num { color: var(--cocoa); }
+.metric:nth-child(4) .metric-num { color: var(--caramel); }
 
-.process-step:nth-child(1) .step-num { color: var(--sage); }
-.process-step:nth-child(2) .step-num { color: var(--clay); }
-.process-step:nth-child(3) .step-num { color: var(--violet); }
-.process-step:nth-child(4) .step-num { color: var(--amber); }
+.process-step:nth-child(1) .step-num { color: var(--olive); }
+.process-step:nth-child(2) .step-num { color: var(--rust); }
+.process-step:nth-child(3) .step-num { color: var(--cocoa); }
+.process-step:nth-child(4) .step-num { color: var(--caramel); }
 
-.process-step:nth-child(1):hover { background: var(--sage-soft); }
-.process-step:nth-child(2):hover { background: var(--clay-soft); }
-.process-step:nth-child(3):hover { background: var(--violet-soft); }
-.process-step:nth-child(4):hover { background: var(--amber-soft); }
+.process-step:nth-child(1):hover { background: var(--olive-soft); }
+.process-step:nth-child(2):hover { background: var(--rust-soft); }
+.process-step:nth-child(3):hover { background: var(--cocoa-soft); }
+.process-step:nth-child(4):hover { background: var(--caramel-soft); }
 
-.marquee span:nth-child(4n+1)::after { background: var(--sage); }
-.marquee span:nth-child(4n+2)::after { background: var(--clay); }
-.marquee span:nth-child(4n+3)::after { background: var(--violet); }
-.marquee span:nth-child(4n+4)::after { background: var(--amber); }
+.marquee span:nth-child(4n+1)::after { background: var(--olive); }
+.marquee span:nth-child(4n+2)::after { background: var(--rust); }
+.marquee span:nth-child(4n+3)::after { background: var(--cocoa); }
+.marquee span:nth-child(4n+4)::after { background: var(--caramel); }
 
 /* Per-project tag colours */
-.work-tag.is-violet { background: var(--violet); color: #fff; border-color: var(--violet); }
-.work-tag.is-clay   { background: var(--clay);   color: #fff; border-color: var(--clay); }
-.work-tag.is-sage   { background: var(--sage);   color: #fff; border-color: var(--sage); }
+.work-tag.is-cocoa { background: var(--cocoa); color: var(--paper); border-color: var(--cocoa); }
+.work-tag.is-rust   { background: var(--rust);   color: var(--paper); border-color: var(--rust); }
+.work-tag.is-olive  { background: var(--olive);  color: var(--paper); border-color: var(--olive); }
 
-.pill-violet { border-color: color-mix(in srgb, var(--violet) 40%, transparent); background: var(--violet-soft); color: var(--violet); }
-.pill-sage   { border-color: color-mix(in srgb, var(--sage) 40%, transparent);   background: var(--sage-soft);   color: var(--sage); }
-.pill-amber  { border-color: color-mix(in srgb, var(--amber) 40%, transparent);  background: var(--amber-soft);  color: var(--amber); }
+.pill-cocoa { border-color: color-mix(in srgb, var(--cocoa) 40%, transparent); background: var(--cocoa-soft); color: var(--cocoa); }
+.pill-olive   { border-color: color-mix(in srgb, var(--olive) 40%, transparent);   background: var(--olive-soft);   color: var(--olive); }
+.pill-caramel  { border-color: color-mix(in srgb, var(--caramel) 40%, transparent);  background: var(--caramel-soft);  color: var(--caramel); }
 
-a.work-card:nth-of-type(2):hover { border-color: var(--clay); }
-a.work-card:nth-of-type(3):hover { border-color: var(--violet); }
+a.work-card:nth-of-type(2):hover { border-color: var(--rust); }
+a.work-card:nth-of-type(3):hover { border-color: var(--cocoa); }
 
 /* ==========================================================================
    Case study — visual-first layout
@@ -1529,7 +1532,7 @@ a.work-card:nth-of-type(3):hover { border-color: var(--violet); }
   font-style: italic;
   font-size: clamp(2.4rem, 5vw, 4rem);
   line-height: 0.9;
-  color: var(--accent, var(--sage));
+  color: var(--accent, var(--olive));
 }
 
 .feature-head h2 {
@@ -1624,4 +1627,51 @@ a.work-card:nth-of-type(3):hover { border-color: var(--violet); }
   .gal-side {
     grid-template-columns: 1fr;
   }
+}
+
+/* ==========================================================================
+   Cocoa band — the one dark section in light mode. Everything inside flips,
+   so the same components keep working without per-element overrides.
+   ========================================================================== */
+.band-cocoa {
+  --paper: #442d1c;
+  --paper-2: #513c2c;
+  --paper-3: #5e4936;
+  --ink: #e8d1a7;
+  --ink-soft: #c7b08b;
+  --ink-faint: #b09978;
+  --line: #68513b;
+  --olive: #c3b992;
+  --rust: #d9a87f;
+  --caramel: #cdaa7c;
+  --cocoa: #e8d1a7;
+  background: #442d1c;
+  color: var(--ink);
+}
+
+/* In dark mode the band is already dark; just deepen it a shade so the
+   section still reads as its own block rather than blending into the page. */
+[data-theme='dark'] .band-cocoa {
+  --paper: #342215;
+  --paper-2: #402a1a;
+  --paper-3: #4b3220;
+  --ink: #e8d1a7;
+  --ink-soft: #b4a07f;
+  --ink-faint: #ac9879;
+  --line: #4a3925;
+  --olive: #b4a47a;
+  --rust: #bc946f;
+  --caramel: #b08e62;
+  --cocoa: #d4be98;
+  background: #342215;
+}
+
+.band-cocoa .btn-primary {
+  background: var(--ink);
+  color: #442d1c;
+}
+
+.band-cocoa .btn-primary:hover {
+  background: var(--rust);
+  color: #2a1a0e;
 }
