@@ -34,7 +34,7 @@ assets/
 
 All tokens live in `:root` at the top of `assets/css/style.css`:
 
-- `--paper` Golden Batter base, `--ink` Cowhide Cocoa, `--line` hairline
+- `--paper` near-white base, `--ink` dark olive, `--line` hairline
 - `--sage` primary accent, `--clay` secondary accent — both AA-contrast checked
 - `--font-display` / `--font-body` Instrument Sans, `--font-voice` Instrument Serif italic
 - Light is the default for everyone; the OS setting is deliberately ignored. Dark

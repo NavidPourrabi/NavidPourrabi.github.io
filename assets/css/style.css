@@ -1,34 +1,34 @@
 /* ==========================================================================
    Navid Pourrabi — portfolio
-   Direction: "Studio" — the "Olive brown" palette: golden-batter paper, fine grain,
-   olive/rust/caramel accents, oversized geometric sans. Light by default.
+   Direction: "Studio" — palette #0038BC / #FCFCFC / #373D20 / #1B998B / #D63230.
+   Near-white paper, olive ink, oversized geometric sans. Light by default.
    ========================================================================== */
 
 /* ==========================================================================
    Design tokens
    ========================================================================== */
 :root {
-  /* Paper & ink — "Olive brown" palette
-     Cowhide Cocoa #442D1C · Spiced Wine #743014 · Toasted Caramel #84592B
-     Olive Harvest #9D9167 · Golden Batter #E8D1A7                        */
-  --paper: #e8d1a7;
-  --paper-2: #f2e6cf;
-  --paper-3: #d5c096;
-  --ink: #442d1c;
-  --ink-soft: #624b35;
-  --ink-faint: #654e38;
-  --line: #c9b68c;
+  /* Paper & ink — palette #0038BC · #FCFCFC · #373D20 · #1B998B · #D63230 */
+  --paper: #fcfcfc;
+  --paper-2: #ffffff;
+  --paper-3: #e8e9e6;
+  --ink: #373d20;
+  --ink-soft: #626750;
+  --ink-faint: #666b55;
+  --line: #d9dad4;
 
-  /* Accents — every value below clears WCAG AA on paper, on cards,
-     and on its own band tint. Don't lighten without re-checking. */
-  --olive: #5b543c;
-  --olive-soft: #ebe1ce;
-  --rust: #743014;
-  --rust-soft: #ede0cf;
-  --cocoa: #442d1c;
-  --cocoa-soft: #dfcdb4;
-  --caramel: #744e26;
-  --caramel-soft: #ece0cd;
+  /* Accents — teal and red are darkened from the raw palette values so they
+     clear WCAG AA on paper, on cards, and on every band tint. The raw
+     #1B998B and #D63230 both fail as small text on white; don't put them
+     back without re-running the contrast check. */
+  --olive: #373d20;
+  --olive-soft: #ecedea;
+  --red: #c92f2d;
+  --red-soft: #f9eeee;
+  --blue: #0038bc;
+  --blue-soft: #eaeef8;
+  --teal: #15786d;
+  --teal-soft: #e8f3f2;
 
   /* Legacy aliases — older markup still references these names */
   --color-bg: var(--paper);
@@ -37,7 +37,7 @@
   --color-ink-soft: var(--ink-soft);
   --color-ink-faint: var(--ink-faint);
   --color-border: var(--line);
-  --color-accent: var(--rust);
+  --color-accent: var(--red);
   --color-data: var(--olive);
   --color-data-soft: var(--olive-soft);
 
@@ -68,21 +68,21 @@
 }
 
 [data-theme='dark'] {
-  --paper: #1f140d;
-  --paper-2: #2d1e12;
-  --paper-3: #382517;
-  --ink: #e8d1a7;
-  --ink-soft: #b4a07f;
-  --ink-faint: #ac9879;
-  --line: #3a3020;
-  --olive: #b4a47a;
-  --olive-soft: #352b1d;
-  --rust: #bc946f;
-  --rust-soft: #381d0f;
-  --cocoa: #d4be98;
-  --cocoa-soft: #342215;
-  --caramel: #b08e62;
-  --caramel-soft: #392615;
+  --paper: #0f1109;
+  --paper-2: #191b0e;
+  --paper-3: #212513;
+  --ink: #f2f4ea;
+  --ink-soft: #b3b4ab;
+  --ink-faint: #8e9087;
+  --line: #252916;
+  --olive: #888b7a;
+  --olive-soft: #1b1e10;
+  --red: #df6160;
+  --red-soft: #2f160f;
+  --blue: #6688d7;
+  --blue-soft: #0c1a30;
+  --teal: #1d9a8c;
+  --teal-soft: #11271e;
 }
 
 /* ==========================================================================
@@ -118,7 +118,7 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.16;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
@@ -451,7 +451,7 @@ body.nav-open .site-header {
 }
 
 .hero h1 em {
-  color: var(--rust);
+  color: var(--red);
 }
 
 .hero-sub {
@@ -550,7 +550,7 @@ body.nav-open .site-header {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--rust);
+  background: var(--red);
   flex-shrink: 0;
 }
 
@@ -709,9 +709,9 @@ a.work-card:hover .work-arrow {
 }
 
 .pill-role {
-  border-color: color-mix(in srgb, var(--rust) 40%, transparent);
-  background: var(--rust-soft);
-  color: var(--rust);
+  border-color: color-mix(in srgb, var(--red) 40%, transparent);
+  background: var(--red-soft);
+  color: var(--red);
 }
 
 .work-outcome {
@@ -1273,7 +1273,7 @@ a.work-card:hover .work-arrow {
   top: 0.72em;
   width: 8px;
   height: 1.5px;
-  background: var(--rust);
+  background: var(--red);
 }
 
 .tag-cloud {
@@ -1455,9 +1455,9 @@ a.work-card:hover .work-arrow {
 }
 
 .band-olive   { background: var(--olive-soft); }
-.band-rust   { background: var(--rust-soft); }
-.band-cocoa { background: var(--cocoa-soft); }
-.band-caramel  { background: var(--caramel-soft); }
+.band-red   { background: var(--red-soft); }
+.band-blue { background: var(--blue-soft); }
+.band-teal  { background: var(--teal-soft); }
 
 /* Cards sitting on a tinted band need to lift off it. */
 .band .work-card,
@@ -1471,36 +1471,36 @@ a.work-card:hover .work-arrow {
    Accent rotation — metrics, process steps, and tags each take a turn
    ========================================================================== */
 .metric:nth-child(1) .metric-num { color: var(--olive); }
-.metric:nth-child(2) .metric-num { color: var(--rust); }
-.metric:nth-child(3) .metric-num { color: var(--cocoa); }
-.metric:nth-child(4) .metric-num { color: var(--caramel); }
+.metric:nth-child(2) .metric-num { color: var(--red); }
+.metric:nth-child(3) .metric-num { color: var(--blue); }
+.metric:nth-child(4) .metric-num { color: var(--teal); }
 
 .process-step:nth-child(1) .step-num { color: var(--olive); }
-.process-step:nth-child(2) .step-num { color: var(--rust); }
-.process-step:nth-child(3) .step-num { color: var(--cocoa); }
-.process-step:nth-child(4) .step-num { color: var(--caramel); }
+.process-step:nth-child(2) .step-num { color: var(--red); }
+.process-step:nth-child(3) .step-num { color: var(--blue); }
+.process-step:nth-child(4) .step-num { color: var(--teal); }
 
 .process-step:nth-child(1):hover { background: var(--olive-soft); }
-.process-step:nth-child(2):hover { background: var(--rust-soft); }
-.process-step:nth-child(3):hover { background: var(--cocoa-soft); }
-.process-step:nth-child(4):hover { background: var(--caramel-soft); }
+.process-step:nth-child(2):hover { background: var(--red-soft); }
+.process-step:nth-child(3):hover { background: var(--blue-soft); }
+.process-step:nth-child(4):hover { background: var(--teal-soft); }
 
 .marquee span:nth-child(4n+1)::after { background: var(--olive); }
-.marquee span:nth-child(4n+2)::after { background: var(--rust); }
-.marquee span:nth-child(4n+3)::after { background: var(--cocoa); }
-.marquee span:nth-child(4n+4)::after { background: var(--caramel); }
+.marquee span:nth-child(4n+2)::after { background: var(--red); }
+.marquee span:nth-child(4n+3)::after { background: var(--blue); }
+.marquee span:nth-child(4n+4)::after { background: var(--teal); }
 
 /* Per-project tag colours */
-.work-tag.is-cocoa { background: var(--cocoa); color: var(--paper); border-color: var(--cocoa); }
-.work-tag.is-rust   { background: var(--rust);   color: var(--paper); border-color: var(--rust); }
+.work-tag.is-blue { background: var(--blue); color: var(--paper); border-color: var(--blue); }
+.work-tag.is-red   { background: var(--red);   color: var(--paper); border-color: var(--red); }
 .work-tag.is-olive  { background: var(--olive);  color: var(--paper); border-color: var(--olive); }
 
-.pill-cocoa { border-color: color-mix(in srgb, var(--cocoa) 40%, transparent); background: var(--cocoa-soft); color: var(--cocoa); }
+.pill-blue { border-color: color-mix(in srgb, var(--blue) 40%, transparent); background: var(--blue-soft); color: var(--blue); }
 .pill-olive   { border-color: color-mix(in srgb, var(--olive) 40%, transparent);   background: var(--olive-soft);   color: var(--olive); }
-.pill-caramel  { border-color: color-mix(in srgb, var(--caramel) 40%, transparent);  background: var(--caramel-soft);  color: var(--caramel); }
+.pill-teal  { border-color: color-mix(in srgb, var(--teal) 40%, transparent);  background: var(--teal-soft);  color: var(--teal); }
 
-a.work-card:nth-of-type(2):hover { border-color: var(--rust); }
-a.work-card:nth-of-type(3):hover { border-color: var(--cocoa); }
+a.work-card:nth-of-type(2):hover { border-color: var(--red); }
+a.work-card:nth-of-type(3):hover { border-color: var(--blue); }
 
 /* ==========================================================================
    Case study — visual-first layout
@@ -1629,49 +1629,53 @@ a.work-card:nth-of-type(3):hover { border-color: var(--cocoa); }
   }
 }
 
+
 /* ==========================================================================
-   Cocoa band — the one dark section in light mode. Everything inside flips,
-   so the same components keep working without per-element overrides.
+   Blue band — the one bold section per page. Every token flips inside it so
+   the same components keep working without per-element overrides.
    ========================================================================== */
-.band-cocoa {
-  --paper: #442d1c;
-  --paper-2: #513c2c;
-  --paper-3: #5e4936;
-  --ink: #e8d1a7;
-  --ink-soft: #c7b08b;
-  --ink-faint: #b09978;
-  --line: #68513b;
-  --olive: #c3b992;
-  --rust: #d9a87f;
-  --caramel: #cdaa7c;
-  --cocoa: #e8d1a7;
-  background: #442d1c;
+.band-blue {
+  --paper: #0038bc;
+  --paper-2: #1a4cc3;
+  --paper-3: #3363cd;
+  --ink: #ffffff;
+  --ink-soft: #d1dbf3;
+  --ink-faint: #b3c3eb;
+  --line: #4770cf;
+  --olive: #dfe4f6;
+  --red: #ffc9c8;
+  --teal: #9fe6dc;
+  --blue: #ffffff;
+  background: #0038bc;
   color: var(--ink);
+  border-block-color: #4770cf;
 }
 
-/* In dark mode the band is already dark; just deepen it a shade so the
-   section still reads as its own block rather than blending into the page. */
-[data-theme='dark'] .band-cocoa {
-  --paper: #342215;
-  --paper-2: #402a1a;
-  --paper-3: #4b3220;
-  --ink: #e8d1a7;
-  --ink-soft: #b4a07f;
-  --ink-faint: #ac9879;
-  --line: #4a3925;
-  --olive: #b4a47a;
-  --rust: #bc946f;
-  --caramel: #b08e62;
-  --cocoa: #d4be98;
-  background: #342215;
+[data-theme='dark'] .band-blue {
+  --paper: #002b91;
+  --paper-2: #0f3ba3;
+  --paper-3: #2453b3;
+  --ink: #ffffff;
+  --ink-soft: #cbd7f1;
+  --ink-faint: #aabce8;
+  --line: #2f5cbb;
+  --olive: #dfe4f6;
+  --red: #ffc9c8;
+  --teal: #9fe6dc;
+  --blue: #ffffff;
+  background: #002b91;
 }
 
-.band-cocoa .btn-primary {
-  background: var(--ink);
-  color: #442d1c;
+.band-blue .btn-primary {
+  background: #ffffff;
+  color: #0038bc;
 }
 
-.band-cocoa .btn-primary:hover {
-  background: var(--rust);
-  color: #2a1a0e;
+.band-blue .btn-primary:hover {
+  background: var(--teal);
+  color: #06322c;
+}
+
+.band-blue .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
