@@ -3,195 +3,98 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Project Name — Case Study — Navid Pourrabi</title>
-<meta name="description" content="Case study: one-line description of the project and outcome." />
-<meta name="robots" content="noindex" />
-
-<!--
-  HOW TO USE THIS FILE
-  ---------------------
-  1. Duplicate this file for each project, e.g. case-study-01.html, case-study-02.html
-  2. Replace every [PLACEHOLDER]-style block with your real content and images.
-  3. Update the href on the matching work-card in index.html to point at your new file.
--->
+<title>Project name case study, Navid Pourrabi</title>
+<meta name="description" content="One sentence about the project." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Young+Serif&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/css/style.css" />
 <script>(function(){try{var t=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap">
-    <a href="../index.html" class="logo">Navid<span>.</span></a>
-    <nav class="nav-links">
-      <a href="../index.html#work">Work</a>
-      <a href="../index.html#motion">Motion</a>
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#process">Process</a>
-      <a href="../resume.html">Résumé</a>
-      <a href="../index.html#contact">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾</button>
-      <a href="../index.html#contact" class="btn btn-primary btn-sm">Let's talk</a>
-      <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu"><span></span></button>
+    <a href="../index.html" class="logo">Navid Pourrabi</a>
+    <div class="nav">
+      <nav class="nav-links" aria-label="Main">
+        <a href="../index.html#work" aria-current="page">Work</a>
+        <a href="../index.html#motion">Motion</a>
+        <a href="../index.html#about">About</a>
+        <a href="../resume.html">Résumé</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">☾</button>
+      <button class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
+  <!-- Copy this file for a new project. Keep sentences short and in your own words. -->
 
-  <!-- ============ CASE STUDY HERO ============ -->
   <section class="cs-hero">
     <div class="wrap">
-      <a href="../index.html#work" class="cs-back reveal">← Back to work</a>
-
-      <div class="eyebrow reveal">UX Research · Product Design · 2025</div>
-      <h1 class="reveal">Project name — the outcome, in one clear sentence.</h1>
-      <p class="hero-sub reveal">
-        One or two sentences setting the scene: what the product was, who it was
-        for, and the headline result of the work.
-      </p>
-
-      <dl class="cs-meta-grid reveal">
-        <div>
-          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Role</dt>
-          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">Lead Product Designer</dd>
-        </div>
-        <div>
-          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Team</dt>
-          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">2 designers, 4 engineers, 1 PM</dd>
-        </div>
-        <div>
-          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Timeline</dt>
-          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">8 weeks</dd>
-        </div>
-        <div>
-          <dt style="font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-faint);margin-bottom:.25rem;">Platform</dt>
-          <dd style="margin:0;font-family:var(--font-display);font-size:1.1rem;">Web, iOS</dd>
-        </div>
+      <a href="../index.html#work" class="back">Back to home</a>
+      <h1>Project name</h1>
+      <p class="lead">One or two sentences: what it is, who it's for, and what you did.</p>
+      <dl class="cs-facts">
+        <div><dt>My role</dt><dd>Your role</dd></div>
+        <div><dt>Team</dt><dd>Who you worked with</dd></div>
+        <div><dt>When</dt><dd>Year</dd></div>
+        <div><dt>Tools</dt><dd>Figma</dd></div>
       </dl>
     </div>
   </section>
 
   <div class="wrap">
-    <div class="cs-cover reveal">
-      <div class="img-placeholder" style="height:100%;">Replace with your primary project cover image (16:8)</div>
-    </div>
+    <figure class="fig">
+      <img src="../assets/images/your-cover.png" alt="Describe the image." />
+      <figcaption>Optional caption.</figcaption>
+    </figure>
   </div>
 
-  <!-- ============ CASE STUDY BODY ============ -->
-  <div class="cs-body wrap">
-
-    <section class="section reveal">
+  <section class="chapter">
+    <div class="wrap">
       <h2>The problem</h2>
-      <p>
-        Describe the situation before your work started. What was broken, confusing,
-        or missing for users? Include a metric or quote if you have one — specifics
-        make this section land.
-      </p>
-      <p>
-        A second paragraph can cover business context: why this problem mattered to
-        the company, and what constraints you were working within (timeline, tech,
-        legacy design debt, etc).
-      </p>
-    </section>
+      <div class="prose"><p>What was wrong, and for whom.</p></div>
+    </div>
+  </section>
 
-    <section class="section reveal">
-      <h2>Research &amp; discovery</h2>
-      <p>
-        Explain how you investigated the problem — user interviews, surveys, analytics,
-        competitive audits, stakeholder workshops. Call out 2–3 concrete findings that
-        shaped your direction.
-      </p>
-      <ul>
-        <li>Key finding one — what you learned and from whom/what source.</li>
-        <li>Key finding two — a surprising or counter-intuitive insight.</li>
-        <li>Key finding three — a constraint that shaped the solution.</li>
-      </ul>
-      <div class="cs-image-row">
-        <div class="img-placeholder">Research artifact — interview notes, affinity map, etc.</div>
-        <div class="img-placeholder">Research artifact — survey results, journey map, etc.</div>
+  <section class="chapter tint">
+    <div class="wrap">
+      <h2>What I made</h2>
+      <div class="prose"><p>The main screens and why they look the way they do.</p></div>
+      <div class="figs figs-2">
+        <figure class="fig"><img src="../assets/images/your-image-1.png" alt="Describe the image." /></figure>
+        <figure class="fig"><img src="../assets/images/your-image-2.png" alt="Describe the image." /></figure>
       </div>
-    </section>
+      <dl class="notes">
+        <div><dt>A decision</dt><dd>Why you made it.</dd></div>
+        <div><dt>A decision</dt><dd>Why you made it.</dd></div>
+        <div><dt>A decision</dt><dd>Why you made it.</dd></div>
+      </dl>
+    </div>
+  </section>
 
-    <section class="section reveal">
-      <h2>Exploring the solution</h2>
-      <p>
-        Walk through your design process — early sketches, wireframes, options you
-        explored and why you moved away from them. Show the thinking, not just the
-        final screens.
-      </p>
-      <div class="cs-image-row">
-        <div class="img-placeholder">Early wireframes / sketches</div>
-        <div class="img-placeholder">Design iterations / options considered</div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <h2>The final design</h2>
-      <p>
-        Present the shipped solution. Explain the key decisions and why they solve the
-        problem from the research phase. Reference specific interactions, flows, or
-        components.
-      </p>
-      <div class="cs-image-row">
-        <div class="img-placeholder">Final UI screen 1</div>
-        <div class="img-placeholder">Final UI screen 2</div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <h2>Outcome &amp; impact</h2>
-      <p>
-        Share what happened after launch — quantitative results if you have them
-        (conversion, retention, task completion, support tickets), and qualitative
-        feedback from users or stakeholders.
-      </p>
-      <div class="cs-outcome-grid">
-        <div class="outcome-stat">
-          <div class="stat-num">+24%</div>
-          <div class="stat-label">Task completion rate</div>
-        </div>
-        <div class="outcome-stat">
-          <div class="stat-num">-38%</div>
-          <div class="stat-label">Support tickets</div>
-        </div>
-        <div class="outcome-stat">
-          <div class="stat-num">4.7 / 5</div>
-          <div class="stat-label">Post-launch satisfaction</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" style="border-bottom:none;">
-      <h2>Reflection</h2>
-      <p>
-        What would you do differently? What did you learn? This section shows
-        self-awareness and growth — it's often what interviewers remember most.
-      </p>
-    </section>
-
-  </div>
-
-  <div class="wrap cs-next reveal">
-    <div class="eyebrow" style="justify-content:center;">Next project</div>
-    <h2><a href="case-study-template.html">Another project name →</a></h2>
-  </div>
+  <section class="chapter">
+    <div class="wrap">
+      <h2>What happened</h2>
+      <div class="prose"><p>Results, what you learned, what you'd do next.</p></div>
+    </div>
+  </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;width:100%;">
-    <span>© <span data-year></span> Navid Pourrabi. Built with care.</span>
-    <div class="footer-links">
-      <a href="mailto:you@example.com">Email</a>
-      <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/NavidPourrabi" target="_blank" rel="noopener">GitHub</a>
-    </div>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Navid Pourrabi, Tilburg</span>
+    <nav aria-label="Footer">
+      <a href="mailto:navid.pourrabi@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/navidpourrabi" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../resume.html">Résumé</a>
+    </nav>
   </div>
 </footer>
 

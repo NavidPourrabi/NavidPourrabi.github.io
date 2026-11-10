@@ -1,6 +1,6 @@
 # navidpourrabi.github.io
 
-Personal portfolio for Navid Pourrabi — product manager and UX designer, with a motion background.
+Personal portfolio for Navid Pourrabi: product and UX, with a film and motion background.
 Static site: HTML, CSS, and a little JS. No build step, no framework.
 
 **Live at https://navidpourrabi.github.io/**
@@ -8,44 +8,38 @@ Static site: HTML, CSS, and a little JS. No build step, no framework.
 ## Structure
 
 ```
-index.html                          → home (hero + metrics, work, about, process, motion, contact)
-resume.html                         → full résumé + PDF download
+index.html                          → home: intro + timeline, Extendsell, motion, about, contact
+resume.html                         → résumé + PDF download
 case-studies/
-  extendsell.html                   → Extendsell — add-ons & frequently bought together
-  case-study-template.html          → duplicate this for each new project (noindexed)
+  extendsell.html                   → Extendsell case study
+  case-study-template.html          → copy this for a new project
 assets/
-  css/style.css                     → design tokens + all styles
-  js/main.js                        → theme toggle, mobile nav, scroll reveal
-  images/extendsell-*.png           → Figma exports used in the case study
-  images/thumb-*.jpg                → Vimeo stills for the work cards
-  images/navid-workshop.jpg         → photo used in the About section
+  css/style.css                     → tokens at the top, then all styles
+  js/main.js                        → theme toggle, mobile menu, header border, footer year
+  images/extendsell-*               → Figma exports used in the case study
+  images/navid-workshop.jpg         → photo in the hero
   resume-navid-pourrabi.pdf         → downloadable résumé
 ```
 
+## Editing the timeline in the hero
+
+Each clip in `index.html` has `style="--s:…;--e:…"`. Those are positions in years from the
+start of 2020, so `--s:2;--e:5.5` runs from January 2022 to mid-2025. The board covers
+2020 to 2027. The playhead and the "moved to the Netherlands" marker use `--at` the same way.
+Move the playhead's `--at` forward as time goes on.
+
+## Design
+
+- Palette: `#0038BC` blue, `#FCFCFC` paper, `#373D20` olive ink, `#1B998B` teal, `#D63230` red.
+  Teal and red are darkened in the CSS so they pass contrast as text.
+- Type: Young Serif for headings, Schibsted Grotesk for everything else (Google Fonts).
+- Light by default. Dark mode is a toggle and is remembered.
+- One animation: the playhead runs to "now" on load. It's off for people who prefer reduced motion.
+
 ## Still to do
 
-- **Résumé PDF is out of date.** `resume.html` now leads with product work; regenerate
-  `assets/resume-navid-pourrabi.pdf` to match.
-- **Letterboxd card has no page yet.** It's a plain card marked "In progress"; once the
-  write-up exists, duplicate the case study template and turn the card into a link.
-
-- **Real Vimeo titles are now in place.** If any label is wrong, edit the `#motion` section.
-- **Extendsell outcomes** — the case study carries no metrics yet, deliberately. Add them
-  once measured; don't publish a number that can't be backed up.
-- **Two more photos** — the headshot and the café photo were never saved to disk; only
-  the workshop photo made it in. Drop them in `assets/images/` to use them.
-
-## Design system
-
-All tokens live in `:root` at the top of `assets/css/style.css`:
-
-- `--paper` near-white base, `--ink` dark olive, `--line` hairline
-- `--sage` primary accent, `--clay` secondary accent — both AA-contrast checked
-- `--font-display` / `--font-body` Instrument Sans, `--font-voice` Instrument Serif italic
-- Light is the default for everyone; the OS setting is deliberately ignored. Dark
-  overrides sit in the `[data-theme=dark]` block
-
-Change a token, the whole site follows.
+- **Résumé PDF is out of date.** Regenerate `assets/resume-navid-pourrabi.pdf` from `resume.html`
+  (print the page to PDF works; the print styles hide the header and buttons).
 
 ## Preview locally
 
@@ -53,17 +47,6 @@ Change a token, the whole site follows.
 npx --yes serve . -l 8123
 ```
 
-Then open `http://localhost:8123`.
-
 ## Deploy
 
-This is a **user site**, so any push to `main` publishes automatically at the root domain
-within a minute or two. No build, no action to run — which also means anything pushed is
-immediately public.
-
-## Notes
-
-- Fonts load from Google Fonts via `<link>` — nothing to install
-- Theme respects the visitor's OS setting on first visit, then remembers their choice in
-  `localStorage`; an inline script in each `<head>` applies it before first paint
-- All content is visible with JS disabled — the scroll animation is progressive enhancement
+This is a user site, so any push to `main` is live within a minute or two.

@@ -3,323 +3,302 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Extendsell — Product &amp; UX — Navid Pourrabi</title>
-<meta name="description" content="Case study: product and UX work on Extendsell, a Shopify upsell app — discovery, launch, and three storefront widgets across light, dark, and three breakpoints." />
+<title>Extendsell case study, Navid Pourrabi</title>
+<meta name="description" content="How I work on Extendsell, a Shopify app for bundles and upsells: the product decisions, the shopper widgets, the merchant settings, and the launch." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Young+Serif&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/css/style.css" />
 <script>(function(){try{var t=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap">
-    <a href="../index.html" class="logo">Navid<span>.</span></a>
-    <nav class="nav-links">
-      <a href="../index.html#work">Work</a>
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#motion">Motion</a>
-      <a href="../resume.html">Résumé</a>
-      <a href="../index.html#contact">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾</button>
-      <a href="../index.html#contact" class="btn btn-primary btn-sm">Let's talk</a>
-      <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu"><span></span></button>
+    <a href="../index.html" class="logo">Navid Pourrabi</a>
+    <div class="nav">
+      <nav class="nav-links" aria-label="Main">
+        <a href="../index.html#work" aria-current="page">Work</a>
+        <a href="../index.html#motion">Motion</a>
+        <a href="../index.html#about">About</a>
+        <a href="../resume.html">Résumé</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">☾</button>
+      <button class="nav-toggle" data-nav-toggle aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 
-  <!-- ============ HERO ============ -->
   <section class="cs-hero">
     <div class="wrap">
-      <a href="../index.html#work" class="cs-back reveal">← Back to work</a>
-
-      <div class="eyebrow reveal">Main project · Product · UX · E-commerce</div>
-      <h1 class="reveal">Three storefront widgets that sell more without making the shopper feel sold to.</h1>
-      <p class="hero-sub reveal">
-        Extendsell helps Shopify merchants raise the value of an order. I work on what we
-        build and who it's for, and I designed the three widgets a shopper actually meets —
-        every state, theme, and breakpoint behind them. <a href="#product" style="text-decoration:underline;text-underline-offset:3px;">Skip to the product side ↓</a>
+      <a href="../index.html#work" class="back">Back to home</a>
+      <h1>Extendsell</h1>
+      <p class="lead">
+        A Shopify app that helps stores sell a bit more per order. I work on what we build
+        and who it's for, and I design what store owners and shoppers see.
       </p>
-
-      <dl class="cs-meta-grid reveal">
-        <div>
-          <dt style="font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-faint);margin-bottom:.25rem;">Role</dt>
-          <dd style="margin:0;font-size:1.05rem;">Product &amp; UX</dd>
-        </div>
-        <div>
-          <dt style="font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-faint);margin-bottom:.25rem;">Widgets</dt>
-          <dd style="margin:0;font-size:1.05rem;">Three, one system</dd>
-        </div>
-        <div>
-          <dt style="font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-faint);margin-bottom:.25rem;">Breakpoints</dt>
-          <dd style="margin:0;font-size:1.05rem;">1280 · 834 · 390</dd>
-        </div>
-        <div>
-          <dt style="font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-faint);margin-bottom:.25rem;">Themes</dt>
-          <dd style="margin:0;font-size:1.05rem;">Light &amp; dark</dd>
-        </div>
+      <dl class="cs-facts">
+        <div><dt>My role</dt><dd>Product and UX</dd></div>
+        <div><dt>Team</dt><dd>Small, remote</dd></div>
+        <div><dt>Platform</dt><dd>Shopify</dd></div>
+        <div><dt>Tools</dt><dd>Figma, Figma Motion</dd></div>
       </dl>
     </div>
   </section>
 
-  <!-- ============ COVER ============ -->
   <div class="wrap">
-    <div class="gal gal-1 reveal" style="margin-top:var(--space-lg);">
-      <figure>
-        <img src="../assets/images/extendsell-fbt-desktop.png" alt="The frequently bought together widget: three products with tick boxes and variant selectors, a total showing a ten percent discount, and an add bundle to cart button." />
-      </figure>
-    </div>
+    <figure class="fig">
+      <img src="../assets/images/extendsell-listing-hero.jpg" alt="The main Extendsell App Store image: 'Boost AOV with upsells and bundles', a list of the five features, and a product page with add-ons." />
+      <figcaption>The main image for our App Store listing.</figcaption>
+    </figure>
   </div>
 
-  <!-- ============ THE IDEA ============ -->
-  <section class="section">
+  <section class="chapter">
     <div class="wrap">
-      <p class="about-lede reveal" style="max-width:24ch;">Two users. Opposite wants. Every screen has to satisfy both.</p>
-      <dl class="fact-row reveal">
-        <div class="fact">
-          <dt>The merchant wants</dt>
-          <dd>The offer seen. Frequent, visible, hard to scroll past.</dd>
-        </div>
-        <div class="fact">
-          <dt>The shopper wants</dt>
-          <dd>To not be sold to. No tricks, no surprises at checkout.</dd>
-        </div>
-        <div class="fact">
-          <dt>So the rule was</dt>
-          <dd>A screen ships only if it survives both readings.</dd>
-        </div>
-      </dl>
+      <h2>Two people, two different wishes</h2>
+      <div class="prose">
+        <p>
+          Every screen in this app has two users. The store owner wants the offer to be seen.
+          The shopper just wants to buy their dress and doesn't want to feel tricked into
+          anything. If a widget only works for one of them, it doesn't really work, because a
+          shopper who feels tricked doesn't come back.
+        </p>
+        <p>
+          So the rule I kept coming back to was simple: the offer has to be clear about what it
+          costs, what you save, and where things end up. If I couldn't explain a screen to both
+          of them in one sentence, I changed the screen.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- ============ 01 · ADD-ONS ============ -->
-  <section class="section band band-red" style="--accent: var(--red);">
+  <section class="chapter tint">
     <div class="wrap">
-      <div class="feature-head reveal">
-        <div class="feature-num">01</div>
-        <h2>Add-ons — one at a time, on purpose</h2>
-      </div>
-      <p class="feature-note reveal">
-        A shelf, not a bundle. Each card has its own price, its own variant, its own button —
-        and the subhead says the rule out loud so nobody has to guess.
-      </p>
-
-      <div class="gal gal-1 reveal">
-        <figure>
-          <img src="../assets/images/extendsell-addon-desktop.png" alt="Add-on widget in light mode: a row of product cards each with price, variant dropdown and add button, beside a running total showing the saving." />
-        </figure>
+      <h2>What shoppers see</h2>
+      <div class="prose">
+        <p>
+          Four widgets live on the product page, plus a quick view and an upsell after checkout. They take their colours and fonts from the
+          store's own theme, so they look like part of the store instead of an app stuck on top.
+          I designed them in light and dark, at desktop, tablet and phone sizes.
+        </p>
       </div>
 
-      <div class="gal gal-side reveal">
-        <figure>
+      <h3>Add-ons</h3>
+      <div class="prose">
+        <p>
+          Small extras you can add one by one, like a case with a phone. Each card has its own
+          price, size and button, and the line under the title says where the add-ons go, so
+          nothing is a surprise at checkout.
+        </p>
+      </div>
+      <figure class="fig">
+        <img src="../assets/images/extendsell-addon-desktop.png" alt="Add-on widget: a row of product cards, each with a price, variant dropdown and add button, next to a running total with the saving." />
+      </figure>
+      <div class="figs figs-side">
+        <figure class="fig">
           <img src="../assets/images/extendsell-addon-dark.png" alt="The same add-on widget in dark mode." />
-          <figcaption>Dark, designed alongside light rather than after it.</figcaption>
+          <figcaption>Dark mode, designed at the same time as light.</figcaption>
         </figure>
-        <figure>
-          <img src="../assets/images/extendsell-addon-phone.png" alt="Add-on widget at 390 pixels wide, with cards stacked for phone." />
-          <figcaption>390px.</figcaption>
+        <figure class="fig">
+          <img src="../assets/images/extendsell-addon-phone.png" alt="Add-on widget at phone width, with the cards stacked." />
+          <figcaption>Phone, 390px wide.</figcaption>
         </figure>
       </div>
 
-      <dl class="fact-row reveal">
-        <div class="fact">
-          <dt>Button</dt>
-          <dd>"Add 1 item to cart" — counts what's selected, so the commitment is never vague.</dd>
+      <h3>Frequently bought together</h3>
+      <div class="prose">
+        <p>
+          A bundle you can edit. If you don't want the belt, untick it and the total updates.
+          Everything else in the offer stays. Every item keeps its own size picker, because a
+          bundle is useless if you can't choose your own size.
+        </p>
+      </div>
+      <figure class="fig">
+        <img src="../assets/images/extendsell-fbt-dark.png" alt="Frequently bought together widget in dark mode, with selectable products and a discounted total." />
+      </figure>
+      <div class="figs figs-2">
+        <figure class="fig">
+          <img src="../assets/images/extendsell-fbt-tablet.png" alt="Frequently bought together widget on tablet." />
+          <figcaption>On tablet the products stay in a row and the total moves underneath.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="../assets/images/extendsell-fbt-phone.png" alt="Frequently bought together widget on phone, with products stacked." />
+          <figcaption>On phone the row becomes a list.</figcaption>
+        </figure>
+      </div>
+
+      <h3>Related products and quick view</h3>
+      <div class="prose">
+        <p>
+          This one isn't selling a bundle. It helps a shopper find something that suits them
+          better. It shows "page 1 of 4" so you know how much there is, and clicking a product
+          opens a quick view, so you never lose your place on the page.
+        </p>
+      </div>
+      <figure class="fig">
+        <img src="../assets/images/extendsell-related.png" alt="Related products carousel with five product cards and a page indicator reading page 1 of 4." />
+      </figure>
+      <div class="figs figs-2">
+        <figure class="fig">
+          <img src="../assets/images/extendsell-quickview.png" alt="Quick view pop-up with an image gallery, a variant dropdown and an add to cart button." />
+        </figure>
+        <figure class="fig">
+          <img src="../assets/images/extendsell-quickview-dark.png" alt="The same quick view pop-up in dark mode." />
+        </figure>
+      </div>
+
+      <h3>Volume discounts</h3>
+      <div class="prose">
+        <p>
+          The newest one: buy more of the same thing, pay less per item. I built it on the same
+          pieces as frequently bought together, so it feels like the same app.
+        </p>
+      </div>
+      <div class="figs figs-narrow">
+        <figure class="fig">
+          <img src="../assets/images/extendsell-volume-buybox.png" alt="Volume discount tiers on a product page: Buy 1 at standard price, Buy 2 with a save 10 percent tag marked most popular, and Buy 3 or more with save 20 percent and a free gift." />
+        </figure>
+        <dl class="notes" style="grid-template-columns:1fr;margin-top:0;">
+          <div>
+            <dt>Prices are totals</dt>
+            <dd>Each tier shows what you'll actually pay for that many, with the old price crossed out under it. Nobody has to do maths.</dd>
+          </div>
+          <div>
+            <dt>One saving tag per tier</dt>
+            <dd>A single yellow tag says how much you save. One label, one job.</dd>
+          </div>
+          <div>
+            <dt>The store's own colour</dt>
+            <dd>The selected tier uses the theme's buy-button colour, so it matches the add to cart button under it.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="wrap">
+      <h2>What store owners see</h2>
+      <div class="prose">
+        <p>
+          Most of our users aren't designers, and they have a shop to run. So the settings had
+          to be boring in a good way. Set things once, change them for one widget only if you
+          need to, and always know what the other options are without opening every menu.
+        </p>
+      </div>
+      <figure class="fig">
+        <img src="../assets/images/extendsell-admin-customize.png" alt="The Customize page inside Shopify admin: common settings, a list of widgets each with an edit button, text and translations, and a contact us box for visual changes." />
+        <figcaption>The Customize page. Common settings first, then each widget, then text and translations.</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="../assets/images/extendsell-admin-fbt-settings.png" alt="Settings for frequently bought together: position set to Automatic (recommended), product card options using the common setting, and text and translations." />
+        <figcaption>Settings for one widget. Each dropdown says what the other choices are, in plain words.</figcaption>
+      </figure>
+      <dl class="notes">
+        <div>
+          <dt>A safe default</dt>
+          <dd>Position is "Automatic (recommended)". Most stores never need to change it.</dd>
         </div>
-        <div class="fact">
-          <dt>Saving</dt>
-          <dd>Shown in currency, not only a percentage. €3.90 lands harder than 10%.</dd>
+        <div>
+          <dt>Set once, override when needed</dt>
+          <dd>A widget can say "use common setting", so a store changes something in one place instead of five.</dd>
         </div>
-        <div class="fact">
-          <dt>Microcopy</dt>
-          <dd>Says where the add-ons go, because a surprise at checkout costs the next order too.</dd>
+        <div>
+          <dt>Honest about limits</dt>
+          <dd>Colours and fonts follow the theme. If a store wants more, there's a contact us button instead of fifty sliders.</dd>
         </div>
       </dl>
     </div>
   </section>
 
-  <!-- ============ 02 · FBT ============ -->
-  <section class="section band band-blue" style="--accent: var(--blue);">
+  <section class="chapter tint">
     <div class="wrap">
-      <div class="feature-head reveal">
-        <div class="feature-num">02</div>
-        <h2>Frequently bought together — one decision, made of parts</h2>
+      <h2>How it got there</h2>
+      <div class="prose">
+        <p>
+          Before any colour I did wireframes for all three screen sizes, mostly to figure out
+          how the carousels should behave. Then I made three visual directions and showed them
+          to the team as a real choice: one led by our brand, one that blends into the store's
+          theme, one that pushes the offer.
+        </p>
       </div>
-      <p class="feature-note reveal">
-        Untick the belt and the total recalculates; the rest of the offer survives. A bundle
-        a shopper can edit is one they'll believe.
-      </p>
-
-      <div class="gal gal-1 reveal">
-        <figure>
-          <img src="../assets/images/extendsell-fbt-dark.png" alt="Frequently bought together widget in dark mode, showing selectable products and a discounted bundle total." />
-        </figure>
-      </div>
-
-      <div class="gal gal-side reveal">
-        <figure>
-          <img src="../assets/images/extendsell-fbt-tablet.png" alt="Frequently bought together widget at 834 pixels wide, on tablet." />
-          <figcaption>834px — the row holds, the summary moves beneath it.</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/images/extendsell-fbt-phone.png" alt="Frequently bought together widget at 390 pixels wide, products stacked vertically." />
-          <figcaption>390px — horizontal becomes vertical automatically.</figcaption>
-        </figure>
-      </div>
-
-      <dl class="fact-row reveal">
-        <div class="fact">
-          <dt>Every item</dt>
-          <dd>Keeps its own variant selector. Bundles fail when you can't pick your own size.</dd>
-        </div>
-        <div class="fact">
-          <dt>The discount</dt>
-          <dd>Sits beside the struck-through original, so the saving needs no arithmetic.</dd>
-        </div>
-        <div class="fact">
-          <dt>Placement</dt>
-          <dd>Directly under the buy button, where intent peaks — not at the foot of the page.</dd>
-        </div>
-      </dl>
+      <figure class="fig">
+        <img src="../assets/images/extendsell-wireframe.png" alt="Wireframes of the add-on widget at desktop, tablet and phone sizes." />
+        <figcaption>Wireframes first.</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="../assets/images/extendsell-directions.png" alt="Three visual directions for the add-on widget side by side: brand-led in purple, theme-adaptive with neutral lines, and offer-led in orange." />
+        <figcaption>Three directions, each with its palette and the reason for it.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- ============ 03 · RELATED ============ -->
-  <section class="section band band-olive" style="--accent: var(--olive);">
+  <section class="chapter" id="product">
     <div class="wrap">
-      <div class="feature-head reveal">
-        <div class="feature-num">03</div>
-        <h2>Related products — discovery without a detour</h2>
-      </div>
-      <p class="feature-note reveal">
-        Not selling a bundle — answering "is there something better for me here?". Paged, so
-        the shopper can see how much there is, with a quick view that never costs them their place.
-      </p>
-
-      <div class="gal gal-1 reveal">
-        <figure>
-          <img src="../assets/images/extendsell-related.png" alt="Related products carousel with five product cards, a page indicator reading page 1 of 4, and a progress bar." />
-          <figcaption>"Page 1 of 4" — the size of the set is never a mystery.</figcaption>
-        </figure>
+      <h2>The product side</h2>
+      <div class="prose">
+        <p>
+          Nice widgets don't matter if nobody installs the app. We have time and almost no
+          budget, so a lot of my work is deciding where that time goes.
+        </p>
       </div>
 
-      <div class="gal gal-2 reveal">
-        <figure>
-          <img src="../assets/images/extendsell-quickview.png" alt="Quick view modal showing a dress with an image gallery, thumbnails, a variant dropdown and an add to cart button." />
-          <figcaption>Quick view — gallery, variant, add, done.</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/images/extendsell-quickview-dark.png" alt="The same quick view modal in dark mode." />
-          <figcaption>Same modal, dark.</figcaption>
-        </figure>
+      <div class="two-col">
+        <div>
+          <h4>Who to talk to first</h4>
+          <p>I made a list of 110 Shopify stores and matched each one with the feature that fits it best, and the language its store is in. That decided who we contacted first and what we led with. I wrote the outreach messages from there.</p>
+        </div>
+        <div>
+          <h4>Small goals on purpose</h4>
+          <p>Our first goal was 10 conversations with store owners and 3 stores actually using the app. Small enough to reach next to a master's, big enough to learn what to build next.</p>
+        </div>
+        <div>
+          <h4>Getting through App Store review</h4>
+          <p>Shopify reviewed the app and asked for changes. Those went to the top of the list, before any new feature. No listing, no installs.</p>
+        </div>
+        <div>
+          <h4>Launching without a budget</h4>
+          <p>For the Product Hunt launch I did my part of the outreach every day. For Black Friday we're giving six months free to stores that install before it, with a set of campaign images to go with it.</p>
+        </div>
+        <div>
+          <h4>A name and a look</h4>
+          <p>We renamed the app from ExtenSell to Extendsell, so I worked on the logo and a set of brand colours in Figma. Then I designed the App Store listing images, and I'm animating the listing video in Figma Motion.</p>
+        </div>
+        <div>
+          <h4>Seeing what works</h4>
+          <p>Store owners get one dashboard with views, clicks and sales for each offer, so they can see which ones are worth keeping.</p>
+        </div>
       </div>
 
-      <div class="gal gal-1 reveal">
-        <figure>
-          <img src="../assets/images/extendsell-related-dark.png" alt="Related products carousel in dark mode." />
+      <div class="figs figs-2" style="margin-top:2.5rem;">
+        <figure class="fig">
+          <img src="../assets/images/extendsell-blackfriday.jpg" alt="Black Friday campaign image: 'Bigger Black Friday orders' next to a volume discount widget and three shopping bags." />
+          <figcaption>One of the Black Friday images.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="../assets/images/extendsell-dashboard.jpg" alt="App Store image titled 'Track what converts', showing the Extendsell dashboard with views, clicks, conversions and value per offer." />
+          <figcaption>The dashboard, as it appears in the App Store listing.</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- ============ EXPLORATION ============ -->
-  <section class="section">
+  <section class="chapter">
     <div class="wrap">
-      <div class="feature-head reveal" style="--accent: var(--teal);">
-        <div class="feature-num">04</div>
-        <h2>Getting there</h2>
+      <h2>Want to see more?</h2>
+      <div class="prose">
+        <p>
+          I'm happy to open the Figma files and walk you through the decisions, the edge cases,
+          and what we cut.
+        </p>
       </div>
-      <p class="feature-note reveal">
-        Three visual directions, each argued on its merits and put to the team as a real
-        choice. Same layout, same flow — the difference is who the widget belongs to.
-      </p>
-
-      <div class="gal gal-1 reveal">
-        <figure>
-          <img src="../assets/images/extendsell-directions.png" alt="Three visual directions for the add-on widget side by side: brand-led in purple, theme-adaptive in neutral hairlines, and offer-led in orange, each with colour swatches and a rationale." />
-          <figcaption>Brand-led, theme-adaptive, offer-led — each with its palette and the argument for it.</figcaption>
-        </figure>
-      </div>
-
-      <div class="gal gal-1 reveal">
-        <figure>
-          <img src="../assets/images/extendsell-wireframe.png" alt="Responsive wireframes of the add-on widget at desktop 1280, tablet 834 and phone 390 pixels, all in carousel view." />
-          <figcaption>Wireframes before colour — carousel behaviour resolved at all three widths first.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 05 · PRODUCT ============ -->
-  <section class="section band band-teal" id="product" style="--accent: var(--teal);">
-    <div class="wrap">
-      <div class="feature-head reveal">
-        <div class="feature-num">05</div>
-        <h2>The product around the widgets</h2>
-      </div>
-      <p class="feature-note reveal">
-        Good widgets don't matter if nobody installs the app. We have time and almost no
-        budget, so most of the product work is deciding where that time goes.
-      </p>
-
-      <div class="product-list reveal">
-        <div>
-          <h3>Who to talk to first</h3>
-          <p>I built a list of 110 Shopify stores and matched each one to the Extendsell feature
-          that fits it best, along with the language its storefront runs in. That list decides
-          who hears from us first and what we lead with — then I wrote the outreach and the
-          beta-recruitment copy around it.</p>
-        </div>
-        <div>
-          <h3>A target we can actually hit</h3>
-          <p>We set the discovery goal at 10 merchant conversations and 3 active installs. Small on
-          purpose: enough real signal to decide the next feature, sized for the hours we can give
-          it alongside a master's.</p>
-        </div>
-        <div>
-          <h3>Getting through review</h3>
-          <p>We submitted to the Shopify App Store and the first review came back with requested
-          changes. Those went straight onto the roadmap ahead of anything new — no listing,
-          no installs.</p>
-        </div>
-        <div>
-          <h3>Launching with no budget</h3>
-          <p>For the Product Hunt launch I ran my own part of the team's outreach: daily batches
-          of makers to reach out to and connect with. When money isn't a lever, time and
-          pricing are — so we're giving six months free to anyone who installs before Black Friday.</p>
-        </div>
-        <div>
-          <h3>A name and a face</h3>
-          <p>The app was renamed from ExtenSell to Extendsell, so I worked on a logo system with
-          brand tokens in Figma, and I'm animating the App Store listing video myself in
-          Figma Motion — the film background earning its keep.</p>
-        </div>
-        <div>
-          <h3>What's next</h3>
-          <p>Volume discounts — the storefront widget and the merchant admin behind it, built on
-          the patterns we already set up for frequently bought together.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ NEXT ============ -->
-  <section class="section">
-    <div class="wrap">
-      <div class="cta-block reveal">
-        <div class="eyebrow" style="justify-content:center;">Next</div>
-        <h2>Want the full walkthrough?</h2>
-        <p class="hero-sub">Happy to open the Figma files and the roadmap, and talk through the decisions, the edge cases, and what got cut.</p>
-        <div class="cta-actions">
-          <a href="mailto:navid.pourrabi@gmail.com" class="btn btn-primary">Get in touch</a>
-          <a href="../index.html#work" class="btn btn-ghost">See other work</a>
-        </div>
+      <div class="hero-actions" style="margin-top:1rem;">
+        <a class="btn btn-primary" href="mailto:navid.pourrabi@gmail.com">Email me</a>
+        <a class="text-link" href="../index.html#motion">See my motion work</a>
       </div>
     </div>
   </section>
@@ -327,14 +306,13 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;width:100%;">
-    <span>© <span data-year></span> Navid Pourrabi — Tilburg, Netherlands.</span>
-    <div class="footer-links">
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Navid Pourrabi, Tilburg</span>
+    <nav aria-label="Footer">
       <a href="mailto:navid.pourrabi@gmail.com">Email</a>
-      <a href="../resume.html">Résumé</a>
       <a href="https://www.linkedin.com/in/navidpourrabi" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/NavidPourrabi" target="_blank" rel="noopener">GitHub</a>
-    </div>
+      <a href="../resume.html">Résumé</a>
+    </nav>
   </div>
 </footer>
 
