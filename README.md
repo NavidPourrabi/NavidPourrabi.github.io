@@ -1,6 +1,6 @@
 # navidpourrabi.github.io
 
-Personal portfolio for Navid Pourrabi — UI/UX designer, product, and motion designer.
+Personal portfolio for Navid Pourrabi — product manager and UX designer, with a motion background.
 Static site: HTML, CSS, and a little JS. No build step, no framework.
 
 **Live at https://navidpourrabi.github.io/**
@@ -8,7 +8,7 @@ Static site: HTML, CSS, and a little JS. No build step, no framework.
 ## Structure
 
 ```
-index.html                          → home (hero + metrics, work, about, process, contact)
+index.html                          → home (hero + metrics, work, about, process, motion, contact)
 resume.html                         → full résumé + PDF download
 case-studies/
   extendsell.html                   → Extendsell — add-ons & frequently bought together
@@ -23,6 +23,11 @@ assets/
 ```
 
 ## Still to do
+
+- **Résumé PDF is out of date.** `resume.html` now leads with product work; regenerate
+  `assets/resume-navid-pourrabi.pdf` to match.
+- **Letterboxd card has no page yet.** It's a plain card marked "In progress"; once the
+  write-up exists, duplicate the case study template and turn the card into a link.
 
 - **Real Vimeo titles are now in place.** If any label is wrong, edit the `#motion` section.
 - **Extendsell outcomes** — the case study carries no metrics yet, deliberately. Add them

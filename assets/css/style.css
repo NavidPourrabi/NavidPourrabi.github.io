@@ -1402,6 +1402,9 @@ a.work-card:hover .work-arrow {
 .h-line {
   display: block;
   overflow: hidden;
+  /* room for descenders (g, y, p) inside the reveal mask, pulled back so line spacing is unchanged */
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
 }
 
 .h-line > span {
@@ -1678,4 +1681,66 @@ a.work-card:nth-of-type(3):hover { border-color: var(--blue); }
 
 .band-blue .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   Typographic thumbnail — for work that has no screenshots yet
+   ========================================================================== */
+.work-thumb.thumb-type {
+  display: grid;
+  place-items: end start;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 31px, color-mix(in srgb, var(--ink) 9%, transparent) 31px 32px),
+    var(--olive-soft);
+}
+
+.thumb-type-inner {
+  padding: var(--space-md);
+  display: grid;
+  gap: var(--space-3xs);
+}
+
+.thumb-type-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.thumb-type-title {
+  font-family: var(--font-voice);
+  font-style: italic;
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 14ch;
+}
+
+/* ==========================================================================
+   Case study — product work list
+   ========================================================================== */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg) var(--space-xl);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--line);
+}
+
+.product-list h3 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.product-list p {
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+  max-width: 52ch;
+}
+
+@media (max-width: 760px) {
+  .product-list { grid-template-columns: 1fr; gap: var(--space-md); }
 }
